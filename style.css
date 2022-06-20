@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth; 
+}
+
 body {
     font-family: 'Aleo', serif;
     font-family: 'Magra', sans-serif;
@@ -47,5 +51,78 @@ body {
     background: 
     url(/travel/assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
     url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.258% no-repeat;
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8.3%;
+    height: 2.384%;
+    background: rgba(242, 120, 92, 0.7);
+    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-text {
+    padding-left: 6px;
+    font-family: 'Magra';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #ffffff;
+}
+
+.nav {
+    margin-right: 50px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 42px;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+  }
+
+.nav-link {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+.login-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 7.153%;
+    height: 45.555%;
+    background: #0D606F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border: none;
+    border-radius: 10px;
+  }
+
+.login-text {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
 }
