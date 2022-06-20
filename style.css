@@ -34,3 +34,18 @@ body {
     font-family: 'Red Hat Text';
     src: url(/travel/assets/fonts/RedHatText-Medium.ttf);
 }
+
+* {
+    box-sizing: border-box;
+  }
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 3775px;
+    border: 1px solid black;
+    background: 
+    url(/travel/assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
+    url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.258% no-repeat;
+    
+}
