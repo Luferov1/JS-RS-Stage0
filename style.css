@@ -1,4 +1,36 @@
 body {
-    font-family: 'Courgette', cursive;
+    font-family: 'Aleo', serif;
     font-family: 'Magra', sans-serif;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+@font-face {
+    font-family: 'Aleo';
+    src: url(/travel/assets/fonts/Aleo-Regular.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Aleo';
+    src: url(/travel/assets/fonts/Aleo-Italic.ttf);
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Magra';
+    src: url(/travel/assets/fonts/Magra-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Magra';
+    src: url(/travel/assets/fonts/Magra-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    src: url(/travel/assets/fonts/RedHatText-Medium.ttf);
 }
