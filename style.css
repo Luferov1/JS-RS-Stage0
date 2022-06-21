@@ -46,11 +46,11 @@ body {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    height: 3775px;
+    height: 3735px;
     border: 1px solid black;
     background: 
     url(/travel/assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
-    url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.258% no-repeat;
+    url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.636% no-repeat;
     display: flex;
     flex-direction: column;
 }
@@ -116,6 +116,7 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
   }
 
 .login-button-text {
@@ -131,7 +132,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 96%;
+    height: 95.957%;
     border: 3px solid yellow;
 }
 .preview {
@@ -141,6 +142,7 @@ body {
     align-items: flex-start;
     margin-top: 0.883%;
     margin-left: 8.3%;
+    margin-bottom: 10.298%;
     padding-bottom: 2.51%;
     width: 61.944%;
     height: 12.145%;
@@ -199,6 +201,7 @@ body {
     box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .search-button-text {
@@ -207,7 +210,57 @@ body {
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
-    color: #FFFFFF;
-    width: 163px;
-    height: 32px;    
+    color: #FFFFFF;   
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 81.736%;
+    height: 6.892%;
+    margin-left: 9.97%;
+    margin-top: 10.298%;
+    border: 1px solid purple;
+}
+
+.steps-header {
+    margin: 0;
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 53px;
+    color: #F2785C;
+}
+
+.steps-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 62.348%;
+}
+
+.steps-section-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+}
+
+.steps-section-item-img {
+    width: 100px;
+    height: 100px;
+}
+
+.steps-section-item-text {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0D606F;
 }
