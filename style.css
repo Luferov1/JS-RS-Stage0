@@ -44,10 +44,9 @@ body {
   }
 
 .container {
-    max-width: 1440px;
+    width: 1440px;
     margin: 0 auto;
     height: 3735px;
-    border: 1px solid black;
     background: 
     url(/travel/assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
     url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.636% no-repeat;
@@ -93,7 +92,7 @@ body {
     align-items: center;
     list-style: none;
     margin: 0;
-  }
+}
 
 .nav-link {
     font-family: 'Red Hat Text';
@@ -103,7 +102,11 @@ body {
     line-height: 21px;
     color: #FFFFFF;
     text-decoration: none;
-  }
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
 
 .login-button {
     display: flex;
@@ -117,9 +120,6 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-  }
-
-.login-button-text {
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
@@ -128,13 +128,18 @@ body {
     color: #FFFFFF;
 }
 
+.login-button:hover {
+    background: #FFFFFF;
+    color: #F2785C;
+    transition: all 0.5s ease-out;
+}
+
 .main {
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
+    overflow: hidden;
     width: 100%;
     height: 95.957%;
-    border: 3px solid yellow;
 }
 .preview {
     display: flex;
@@ -147,7 +152,6 @@ body {
     padding-bottom: 2.51%;
     width: 61.944%;
     height: 12.145%;
-    border: 1px solid purple;
 }
 
 .preview-header {
@@ -199,19 +203,22 @@ body {
     width: 25.56%;
     height: 62.105%;
     background: #0D606F;
-    box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16); 
     border: none;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.search-button-text {
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
-    color: #FFFFFF;   
+    color: #FFFFFF;    
+}
+
+.search-button:hover {
+    background: #ffffff;
+    color: #F2785C;
+    transition: all 0.5s;
 }
 
 .steps {
@@ -224,7 +231,6 @@ body {
     margin-left: 9.97%;
     margin-top: 11.298%;
     margin-bottom: 3.706%;
-    border: 1px solid purple;
 }
 
 .steps-header {
@@ -274,10 +280,9 @@ body {
     align-items: center;
     margin-left: -97.222%;
     margin-top: 3.706%;
-    margin-bottom: 4.232%;
+    margin-bottom: 2.232%;
     width: 294.444%;
     height: 29.074%;
-    border: 1px solid purple;
 }
 
 .destinations-header {
@@ -353,14 +358,6 @@ body {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-}
-
-.destinations-button-img {
-    width: 17.54%;
-    height: 67.797%;
-}
-
-.destinations-button-text {
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
@@ -369,17 +366,28 @@ body {
     color: #FFFFFF;
 }
 
+.destinations-button:hover {
+    background: #F2785C;
+    color: #FFFFFF;
+    transition: all 0.5s;
+}
+
+.destinations-button-img {
+    width: 17.54%;
+    height: 67.797%;
+}
+
 .stories {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    margin-top: 4.232%;
-    padding-bottom: 5.394%;
+    margin-top: 2.232%;
+    /* padding-bottom: 5.394%; */
+    padding-bottom: 2.786%;
     width: 100%;
-    height: 41.388%;
+    height: 37.552%;
     background: rgba(255, 255, 255, 0.7);
-    border: 1px solid purple;
 }
 
 .stories-header {
@@ -400,14 +408,13 @@ body {
     align-items: center;
     width: 83.333%;
     height: 84.943%;
-    border: 1px solid black;
 }
 
 .stories-item {
     display: flex;
     gap: 3.41%;
     width: 100%;
-    height: 21.367%;
+    height: 22.916%;
 }
 
 .stories-item-img {
@@ -421,12 +428,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60.317%;
+    width: 63.504%;
     height: 100%;
 }
 
 .stories-item-text-header {
     margin: 0;
+    padding: 0;
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 400;
@@ -437,6 +445,7 @@ body {
 
 .stories-item-text-p {
     margin: 0;
+    padding: 0;
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 400;
@@ -467,6 +476,18 @@ body {
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.stories-button:hover {
+    background: #F2785C;
+    color: #FFFFFF;
+    transition: all 0.5s;
 }
 
 .stories-button-img {
@@ -474,11 +495,42 @@ body {
     height: 67.797%;
 }
 
-.stories-button-text {
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 1.659%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 8.403%;
+    width: 50.622%;
+    height: 100%;
+}
+
+.footer-licence {
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 21px;
     color: #FFFFFF;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 19.23%;
+    height: 100%;
+}
+
+.footer-item-img {
+    width: 33.65px;
+    height: 33.65px;
 }
