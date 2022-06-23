@@ -59,7 +59,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 8.3%;
-    height: 2.384%;
+    height: 2.41%;
     background: rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
 }
@@ -139,17 +139,17 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    height: 95.957%;
+    height: 95.879%;
 }
 .preview {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 0.883%;
+    margin-top: 1.883%;
     margin-left: 8.3%;
-    margin-bottom: 11.298%;
-    padding-bottom: 2.51%;
+    margin-bottom: 10.998%;
+    padding-bottom: 0.7%;
     width: 61.944%;
     height: 12.145%;
 }
@@ -178,7 +178,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 22.512%;
+    height: 25.612%;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 16px;
 }
@@ -226,11 +226,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 81.736%;
-    height: 6.892%;
-    margin-left: 9.97%;
-    margin-top: 11.298%;
-    margin-bottom: 3.706%;
+    width: 100%;
+    height: 7.497%;
+    margin-top: 10.998%;
+    margin-bottom: 3.606%;
 }
 
 .steps-header {
@@ -246,7 +245,7 @@ body {
 .steps-section {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 79.653%;
     height: 62.348%;
 }
 
@@ -279,10 +278,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-left: -97.222%;
-    margin-top: 3.706%;
-    margin-bottom: 2.232%;
+    margin-top: 3.606%;
+    margin-bottom: 2.832%;
     width: 294.444%;
-    height: 29.074%;
+    height: 30.904%;
 }
 
 .destinations-header {
@@ -382,11 +381,11 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    margin-top: 2.232%;
+    margin-top: 2.832%;
     /* padding-bottom: 5.394%; */
     padding-bottom: 2.786%;
     width: 100%;
-    height: 37.552%;
+    height: 40.852%;
     background: rgba(255, 255, 255, 0.7);
 }
 
@@ -427,7 +426,7 @@ body {
 .stories-item-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap : 10%;
     width: 63.504%;
     height: 100%;
 }
@@ -501,7 +500,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 1.659%;
+    height: 1.711%;
 }
 
 .footer-content {
