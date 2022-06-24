@@ -10,33 +10,33 @@ body {
 
 @font-face {
     font-family: 'Aleo';
-    src: url(/travel/assets/fonts/Aleo-Regular.ttf);
+    src: url(assets/fonts/Aleo-Regular.ttf);
     font-style: normal;
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Aleo';
-    src: url(/travel/assets/fonts/Aleo-Italic.ttf);
+    src: url(assets/fonts/Aleo-Italic.ttf);
     font-style: italic;
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Magra';
-    src: url(/travel/assets/fonts/Magra-Regular.ttf);
+    src: url(assets/fonts/Magra-Regular.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Magra';
-    src: url(/travel/assets/fonts/Magra-Bold.ttf);
+    src: url(assets/fonts/Magra-Bold.ttf);
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Red Hat Text';
-    src: url(/travel/assets/fonts/RedHatText-Medium.ttf);
+    src: url(assets/fonts/RedHatText-Medium.ttf);
 }
 
 * {
@@ -48,8 +48,8 @@ body {
     margin: 0 auto;
     height: 3735px;
     background: 
-    url(/travel/assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
-    url(/travel/assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.636% no-repeat;
+    url(assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
+    url(assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.636% no-repeat;
     display: flex;
     flex-direction: column;
 }
@@ -335,13 +335,13 @@ body {
 .destinations-radio-current-on {
     width: 25%;
     height: 100%;
-    background: url(/travel/assets/svg/EllipseOn.svg);
+    background: url(assets/svg/EllipseOn.svg);
 }
 
 .destinations-radio-current-off {
     width: 25%;
     height: 100%;
-    background: url(/travel/assets/svg/EllipseOff.svg);
+    background: url(assets/svg/EllipseOff.svg);
 }
 
 .destinations-button {
