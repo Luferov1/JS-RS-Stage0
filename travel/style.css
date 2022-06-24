@@ -48,8 +48,8 @@ body {
     margin: 0 auto;
     height: 3735px;
     background: 
-    url(assets/img/background/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) top / 100% 20.265% no-repeat,
-    url(assets/img/background/Rectangle\ 27.jpg) bottom / 100% 35.636% no-repeat;
+    url(assets/img/background/bg1.jpg) top / 100% 20.265% no-repeat,
+    url(assets/img/background/bg2.jpg) bottom / 100% 35.636% no-repeat;
     display: flex;
     flex-direction: column;
 }
