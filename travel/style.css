@@ -1,3 +1,46 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 html {
     scroll-behavior: smooth; 
 }
@@ -43,13 +86,17 @@ body {
     box-sizing: border-box;
   }
 
+@media (min-width: 391px) {
+    .container {
+        background: 
+        url(assets/img/background/bg1.jpg) top / 100% 20.265% no-repeat,
+        url(assets/img/background/bg2.jpg) bottom / 100% 35.636% no-repeat;
+    }
+}  
 .container {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
     height: 3735px;
-    background: 
-    url(assets/img/background/bg1.jpg) top / 100% 20.265% no-repeat,
-    url(assets/img/background/bg2.jpg) bottom / 100% 35.636% no-repeat;
     display: flex;
     flex-direction: column;
 }
@@ -132,6 +179,19 @@ body {
     background: #FFFFFF;
     color: #F2785C;
     transition: all 0.5s ease-out;
+}
+
+.menu-button {
+ display: none;
+ cursor: pointer;
+ height: 100%;
+}
+
+.menu-button-bar {
+    width: 26.25px;
+    height: 2.67px;
+    border-radius: 1px;
+    background-color: #FFFFFF;
 }
 
 .main {
@@ -531,4 +591,79 @@ body {
 .footer-item-img {
     width: 33.65px;
     height: 33.65px;
+}
+
+@media (max-width: 391px) {
+    
+    .container {
+        max-width: 390px;
+        height: 1475px;
+        margin: 0 auto;
+        border-radius: 30px;
+        overflow-x: hidden;
+        background: 
+        linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 4.1%),
+        url(assets/img/background/bg3.jpg) top / 100% 251px no-repeat,
+        url(assets/img/background/bg2.jpg) bottom / 100% 782px no-repeat;
+        /* background-size: 100%; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+
+    .nav, .logo-text, .login-button, .preview-header, .preview-text, .footer-licence {
+        display: none;
+    }
+
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .header {
+        background: none;
+        box-shadow: none;
+        width: 91.8%;
+        height: 35px;
+        margin-top: 43px;
+        margin-bottom: 67px;
+        padding: 0;
+    }
+
+    .preview {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 109px;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .search {
+        border-radius: 16px;
+        width: 92.3%;
+        height: 48px;
+    }
+
+    .search-text {
+        font-family: 'Aleo';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #F2785C;
+    }
+
+    .search-button {
+        font-family: 'Red Hat Text';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 15px;
+        color: #FFFFFF;
+
+    }
 }
