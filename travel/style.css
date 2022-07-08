@@ -600,18 +600,16 @@ body {
         height: 1475px;
         margin: 0 auto;
         border-radius: 30px;
-        overflow-x: hidden;
         background: 
         linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 4.1%),
         url(assets/img/background/bg3.jpg) top / 100% 251px no-repeat,
-        url(assets/img/background/bg2.jpg) bottom / 100% 782px no-repeat;
-        /* background-size: 100%; */
+        url(assets/img/background/bg4.jpg) bottom / 100% 693px no-repeat;
         display: flex;
         flex-direction: column;
         align-items: center;   
     }
 
-    .nav, .logo-text, .login-button, .preview-header, .preview-text, .footer-licence {
+    .nav, .logo-text, .login-button, .preview-header, .preview-text, .footer-licence, .hide, .destinations-radio {
         display: none;
     }
 
@@ -633,6 +631,11 @@ body {
         padding: 0;
     }
 
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .preview {
         display: flex;
         align-items: center;
@@ -649,8 +652,6 @@ body {
     }
 
     .search-text {
-        font-family: 'Aleo';
-        font-style: italic;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
@@ -658,12 +659,158 @@ body {
     }
 
     .search-button {
-        font-family: 'Red Hat Text';
-        font-style: normal;
         font-weight: 500;
         font-size: 11px;
         line-height: 15px;
         color: #FFFFFF;
+    }
 
+    .steps {
+        justify-content: flex-start;
+        gap: 20px;
+        margin: 0;
+        margin-bottom: 20px;
+        width: 92.3%;
+        height: 153px;
+    }
+
+    .steps-header {
+        width: 59.44%;
+        height: 19px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .steps-section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+        height: 114px;
+    }
+
+    .steps-section-item-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .steps-section-item-text {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .first {
+        align-items: flex-start;
+        width: 26.1%;
+    }
+
+    .second {
+        justify-content: flex-start;
+        gap: 20px;
+        text-align: center;
+        width: 35.8%;
+    }
+
+    .third {
+       align-items: flex-end;
+       text-align: right;
+       width: 27.2%;
+    }
+
+    .destinations {
+        position: relative;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 0;
+        width: 100%;
+        height: 289px;
+        
+    }
+    .destinations-header {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 10px;
+    }
+
+    .destinations-slider {
+        justify-content: flex-start;
+        height: 210px;
+    }
+
+    .destinations-slider-container {
+        margin-left: 3.84%;
+        margin-right: 3.84%;
+        flex-shrink: 0;
+        width: 92.3%;
+        height: 210px;
+    }
+
+    .destinations-slider-container-text {
+        top: 8px;
+        left: 15px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .slider-button-left {
+    position: absolute;
+    z-index: 10;
+    top: 129px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: 
+    url(assets/svg/sliderArrow.svg) center no-repeat;
+    border: none;
+    cursor: pointer;
+    }
+
+    .slider-button-right {
+        position: absolute;
+        z-index: 10;
+        top: 129px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        background: 
+        url(assets/svg/sliderArrowActive.svg) center no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+
+    .slider-label-container {
+        position: absolute;
+        bottom: 52px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        width: 36px;
+        height: 8px;
+    }
+
+    .slider-label-item {
+        flex-shrink: 0;
+        width: 8px;
+        height: 8px;
+    }
+
+    .destinations-button {
+        gap: 1px;
+        justify-content: space-around;
+        width: 23.59%;
+        height: 30px;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+    .destinations-button-img {
+        width: 10px;
+        height: 10px;
     }
 }
