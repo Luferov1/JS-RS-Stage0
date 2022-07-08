@@ -354,6 +354,17 @@ body {
     color: #F2785C;
 }
 
+.slider-button-left {
+    display: none;
+}
+.slider-button-right {
+    display: none;
+}
+
+.slider-label-container {
+    display: none;
+}
+
 .destinations-slider {
     display: flex;
     justify-content: space-between;
@@ -759,6 +770,7 @@ body {
 
     .slider-button-left {
     position: absolute;
+    display: block;
     z-index: 10;
     top: 129px;
     left: 20px;
@@ -772,6 +784,7 @@ body {
 
     .slider-button-right {
         position: absolute;
+        display: block;
         z-index: 10;
         top: 129px;
         right: 20px;
