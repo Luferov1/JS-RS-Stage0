@@ -93,9 +93,11 @@ body {
         url(assets/img/background/bg2.jpg) bottom / 100% 35.636% no-repeat;
     }
 }  
+
+
 .container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     max-width: 1440px;
     margin: 0 auto;
     height: 3735px;
@@ -103,9 +105,11 @@ body {
     flex-direction: column;
 }
 
+
 .burger-menu {
     display: none;
     position: absolute;
+    z-index: 999;
     flex-direction: column;
     gap: 6px;
     right: -165px;
@@ -114,8 +118,12 @@ body {
     background: #F2785C;
     box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
     border-radius: 10px;
-    /* transform: translate(-165px, 0);
-    transition: 5s; */
+    transition: transform 1s;
+    filter: none;
+}
+
+.burger-menu-open {
+    transform: translate(-165px, 0);
 }
 
 .burger-menu-button {
