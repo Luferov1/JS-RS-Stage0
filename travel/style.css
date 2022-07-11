@@ -436,6 +436,19 @@ body {
     position: relative;
     width: 18.868%;
     height: 100%;
+    border-radius: 16px;
+}
+
+.japan {
+    background: url(assets/img/japan.jpg) center / 100% 100% no-repeat;
+}
+
+.spain {
+    background: url(assets/img/spain.jpg) center / 100% 100% no-repeat;
+}
+
+.usa {
+    background: url(assets/img/usa.jpg) center / 100% 100% no-repeat;
 }
 
 .destinations-slider-container-img {
@@ -551,6 +564,22 @@ body {
     height: 100%;
     filter: drop-shadow(0px 4px 4px #0D606F);
     border-radius: 16px;
+}
+
+.story1 {
+    background: url(assets/img/story1.jpg) center / 100% 100% no-repeat;
+}
+
+.story2 {
+    background: url(assets/img/story2.jpg) center / 100% 100% no-repeat;
+}
+
+.story3 {
+    background: url(assets/img/story3.jpg) center / 100% 100% no-repeat;
+}
+
+.story4 {
+    background: url(assets/img/story4.jpg) center / 100% 100% no-repeat;
 }
 
 .stories-item-text {
@@ -825,6 +854,18 @@ body {
         height: 210px;
     }
 
+    .japan {
+        background-image: url(assets/img/japan2.jpg);
+    }
+
+    .spain {
+        background-image: url(assets/img/spain2.jpg);
+    }
+
+    .usa {
+        background-image: url(assets/img/usa2.jpg);
+    }
+
     .destinations-slider-container-text {
         top: 8px;
         left: 15px;
@@ -923,8 +964,24 @@ body {
     }
 
     .stories-item-img {
-        width: 155px;
+        width: 170px;
         height: 130px;
+    }
+
+    .story1 {
+        background: url(assets/img/story12.jpg) center / 100% 100% no-repeat;
+    }
+    
+    .story2 {
+        background: url(assets/img/story22.jpg) center / 100% 100% no-repeat;
+    }
+    
+    .story3 {
+        background: url(assets/img/story32.jpg) center / 100% 100% no-repeat;
+    }
+    
+    .story4 {
+        background: url(assets/img/story42.jpg) center / 100% 100% no-repeat;
     }
 
     .stories-item-text {
