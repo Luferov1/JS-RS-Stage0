@@ -19,3 +19,5 @@ closeButton.addEventListener('click', close);
 for (let link of links) {
     link.addEventListener('click', close);
 }
+
+console.log('1. +48 \n2. +15 \n3. +20\nmark: 75/75');
