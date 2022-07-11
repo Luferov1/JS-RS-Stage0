@@ -86,7 +86,7 @@ body {
     box-sizing: border-box;
   }
 
-@media (min-width: 391px) {
+@media screen and (min-width: 391px) {
     .container {
         background: 
         url(assets/img/background/bg1.jpg) top / 100% 20.265% no-repeat,
@@ -693,7 +693,7 @@ body {
     height: 33.65px;
 }
 
-@media (max-width: 391px) {
+@media screen and (max-width: 391px) {
     
     .container {
         max-width: 390px;
@@ -1041,7 +1041,7 @@ body {
     }
 }
 
-@media (max-width: 351px) {
+@media screen and (max-width: 351px) {
     .stories-item-text {
         gap: 6px;
     }
