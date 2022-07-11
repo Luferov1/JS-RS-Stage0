@@ -89,8 +89,8 @@ body {
 @media screen and (min-width: 391px) {
     .container {
         background: 
-        url(assets/img/background/bg1.jpg) top / 100% 20.265% no-repeat,
-        url(assets/img/background/bg2.jpg) bottom / 100% 35.636% no-repeat;
+        url(assets/img/background/bg1.jpg) top / 100% 765px no-repeat,
+        url(assets/img/background/bg2.jpg) bottom / 100% 1331px no-repeat;
     }
 }  
 
@@ -167,7 +167,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 8.3%;
-    height: 2.41%;
+    height: 90px;
     background: rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
 }
@@ -188,14 +188,13 @@ body {
 }
 
 .nav {
-    margin-right: 50px;
+    width: 44.4%;
 }
 
 .nav-list {
     display: flex;
-    flex-wrap: wrap;
     padding: 0;
-    gap: 42px;
+    gap: 8%;
     justify-content: space-between;
     align-items: center;
     list-style: none;
@@ -259,19 +258,19 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 95.879%;
+    height: 3584px;
 }
 .preview {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 1.883%;
+    margin-top: 32px;
     margin-left: 8.3%;
-    margin-bottom: 10.998%;
+    margin-bottom: 301px;
     padding-bottom: 0.7%;
     width: 61.944%;
-    height: 12.145%;
+    height: 422px;
 }
 
 .preview-header {
@@ -347,9 +346,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 7.497%;
-    margin-top: 10.998%;
-    margin-bottom: 3.606%;
+    height: 247px;
+    margin-bottom: 97px;
 }
 
 .steps-header {
@@ -398,10 +396,9 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-left: -97.222%;
-    margin-top: 3.606%;
-    margin-bottom: 2.832%;
+    margin-bottom: 80px;
     width: 294.444%;
-    height: 30.904%;
+    height: 1042px;
 }
 
 .destinations-header {
@@ -524,11 +521,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    margin-top: 2.832%;
+    gap: 3%;
     padding-bottom: 2.786%;
     width: 100%;
-    height: 40.852%;
+    height: 1332px;
     background: rgba(255, 255, 255, 0.7);
 }
 
@@ -585,7 +581,7 @@ body {
 .stories-item-text {
     display: flex;
     flex-direction: column;
-    gap : 10%;
+    gap : 6%;
     width: 63.504%;
     height: 100%;
 }
@@ -659,7 +655,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 1.711%;
+    height: 61px;
 }
 
 .footer-content {
@@ -688,10 +684,134 @@ body {
     height: 100%;
 }
 
-.footer-item-img {
-    width: 33.65px;
+.footer-item {
+    width: 29.2%;
     height: 33.65px;
 }
+.footer-item-img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1180px) {
+    .logo-text {
+        font-size: 26px; /*-6*/
+    }
+    
+    .nav-link, .login-button, .footer-licence {
+        font-size: 14px; /*-2*/
+    }
+
+    .preview-header {
+        font-size: 65px; /*-15*/
+    }
+
+    .preview-text, .steps-section-item-text  {
+        font-size: 17.5px; /*-2.5*/
+    }
+
+    .search-button, .destinations-button, .stories-button {
+        font-size: 20.5px; /*-3.5*/
+    }
+
+    .search-text {
+        font-size: 21.5px; /*-2.5*/
+    }
+
+    .steps-header, .destinations-header, .stories-header {
+        font-size: 33.5px; /*-6.5*/
+    }
+
+    .stories-item-text-header {
+        font-size: 29px; /*-6*/
+    }
+
+    .stories-item-text-p, .stories-item-text-p-link  {
+        font-size: 17px; /*-2*/
+        line-height: 21px;
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    .logo-text {
+        font-size: 20px; /*-6*/
+    }
+    
+    .nav-link, .login-button, .footer-licence {
+        font-size: 12px; /*-2*/
+    }
+
+    .preview-header {
+        font-size: 50px; /*-15*/
+    }
+
+    .preview-text, .steps-section-item-text  {
+        font-size: 15px; /*-2.5*/
+    }
+
+    .search-button, .destinations-button, .stories-button {
+        font-size: 17px; /*-3.5*/
+    }
+
+    .search-text {
+        font-size: 19px; /*-2.5*/
+    }
+
+    .steps-header, .destinations-header, .stories-header {
+        font-size: 27px; /*-6.5*/
+    }
+
+    .stories-item-text-header {
+        font-size: 23px; /*-6*/
+    }
+
+    .stories-item-text-p, .stories-item-text-p-link {
+        font-size: 14px; /*-2*/
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .logo-text {
+        font-size: 14px; /*-6*/
+    }
+    
+    .nav-link, .login-button, .footer-licence {
+        font-size: 10px; /*-2*/
+    }
+
+    .preview-header {
+        font-size: 35px; /*-15*/
+    }
+
+    .preview-text, .steps-section-item-text  {
+        font-size: 12.5px; /*-2.5*/
+    }
+
+    .search-button, .destinations-button, .stories-button {
+        font-size: 13.5px; /*-3.5*/
+    }
+
+    .search-text {
+        font-size: 16.5px; /*-2.5*/
+    }
+
+    .steps-header, .destinations-header, .stories-header {
+        font-size: 20.5px; /*-6.5*/
+    }
+
+    .stories-item-text-header {
+        font-size: 17px; /*-6*/
+    }
+
+    .stories-item-text-p, .stories-item-text-p-link {
+        font-size: 11px; /*-2*/
+        line-height: 14px;
+    }
+}
+
+
 
 @media screen and (max-width: 391px) {
     
