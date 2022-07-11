@@ -12,7 +12,20 @@
     <title>Travel</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
+        <nav class="burger-menu" id="burger-menu">
+            <button class="burger-menu-button" id="close">
+                <img src="assets/svg/close.svg" alt="close" class="burger-menu-button-img">
+            </button>
+                <ul class="burger-menu-list">
+                    <li class="burger-menu-item"><a href="#preview" class="burger-menu-link">How It Works</a></li>
+                    <li class="burger-menu-item"><a href="#steps" class="burger-menu-link">Plan Your Trip</a></li>
+                    <li class="burger-menu-item"><a href="#destinations" class="burger-menu-link">Destinations</a></li>
+                    <li class="burger-menu-item"><a href="#stories" class="burger-menu-link">Travel Stories</a></li>
+                    <li class="burger-menu-item"><a href="" class="burger-menu-link">Account</a></li>
+                    <li class="burger-menu-item"><a href="#footer" class="burger-menu-link">Social Media</a></li>
+                </ul>
+        </nav>
         <header class="header">
             <div class="logo">
                 <img src="assets/svg/logo.svg" alt="logo">
@@ -27,6 +40,14 @@
                 </ul>
             </nav>
             <button class="login-button"><span>Login</span></button>
+            <div class="menu-button" id="open">
+                <div class="menu-button-bar">
+                </div>
+                <div class="menu-button-bar">
+                </div>
+                <div class="menu-button-bar">
+                </div>
+            </div> 
         </header>
         <main class="main">
             <section id="preview" class="preview">
@@ -40,41 +61,43 @@
             <section id="steps" class="steps">
                 <h2 class="steps-header">3 STEPS TO THE PERFECT TRIP</h2>
                 <div class="steps-section">
-                    <div class="steps-section-item">
+                    <div class="steps-section-item first">
                         <img src="assets/svg/bicycle.svg" alt="bicycle" class="steps-section-item-img">
-                        <div class="steps-section-item-text">Tell us what you want to do</div>
+                        <div class="steps-section-item-text ">Tell us what you want to do</div>
                     </div>
-                    <div class="steps-section-item">
+                    <div class="steps-section-item second">
                         <img src="assets/svg/calendar.svg" alt="calendar" class="steps-section-item-img">
-                        <div class="steps-section-item-text">Share us preferable dates</div>
+                        <div class="steps-section-item-text ">Share us preferable dates</div>
                     </div>
-                    <div class="steps-section-item">
+                    <div class="steps-section-item third">
                         <img src="assets/svg/boot.svg" alt="boot" class="steps-section-item-img">
-                        <div class="steps-section-item-text">We will give you recommendations</div>
+                        <div class="steps-section-item-text ">We will give you recommendations</div>
                     </div>
                 </div>
             </section>
             <section id="destinations" class="destinations">
                 <h2 class="destinations-header">POPULAR DESTINATIONS</h2>
+                <button class="slider-button-left"></button>
+                <button class="slider-button-right"></button>
+                <div class="slider-label-container">
+                    <img src="assets/svg/EllipseOn.svg" alt="on" class="slider-label-item">
+                    <img src="assets/svg/EllipseOff.svg" alt="off" class="slider-label-item">
+                    <img src="assets/svg/EllipseOff.svg" alt="off" class="slider-label-item">
+                </div>                
                 <div class="destinations-slider">
-                    <div class="destinations-slider-container">
-                        <img src="assets/img/usa.jpg" alt="usa" class="destinations-slider-container-img">
+                    <div class="destinations-slider-container hide usa">
                         <div class="destinations-slider-container-text">USA</div>
                     </div>
-                    <div class="destinations-slider-container">
-                        <img src="assets/img/spain.jpg" alt="spain" class="destinations-slider-container-img">
+                    <div class="destinations-slider-container spain">
                         <div class="destinations-slider-container-text">SPAIN</div>
                     </div>
-                    <div class="destinations-slider-container">
-                        <img src="assets/img/japan.jpg" alt="japan" class="destinations-slider-container-img">
+                    <div class="destinations-slider-container japan">    
                         <div class="destinations-slider-container-text">JAPAN</div>
                     </div>
-                    <div class="destinations-slider-container">
-                        <img src="assets/img/usa.jpg" alt="usa" class="destinations-slider-container-img">
+                    <div class="destinations-slider-container usa">
                         <div class="destinations-slider-container-text">USA</div>
                     </div>
-                    <div class="destinations-slider-container">
-                        <img src="assets/img/spain.jpg" alt="spain" class="destinations-slider-container-img">
+                    <div class="destinations-slider-container hide spain">
                         <div class="destinations-slider-container-text">SPAIN</div>
                     </div>
                 </div>
@@ -92,7 +115,7 @@
                 <h2 class="stories-header">TRAVEL STORIES</h2>
                 <div class="stories-container">
                     <div class="stories-item">
-                        <img src="assets/img/story1.jpg" alt="story1" class="stories-item-img">
+                        <div  class="stories-item-img story1"></div>
                         <div class="stories-item-text">
                             <h3 class="stories-item-text-header">10 Photos of Attractive Thailand</h3>
                             <div class="stories-item-text-p">Lorem ipsum dolor sit amet, consectetur 
@@ -107,7 +130,7 @@
                         </div>
                     </div>
                     <div class="stories-item">
-                        <img src="assets/img/story2.jpg" alt="story2" class="stories-item-img">
+                        <div class="stories-item-img story2"></div>
                         <div class="stories-item-text">
                             <h3 class="stories-item-text-header">Canyonlands National Park, Utah</h3>
                             <p class="stories-item-text-p">Lorem ipsum dolor sit amet, consectetur 
@@ -122,7 +145,7 @@
                         </div>
                     </div>
                     <div class="stories-item">
-                        <img src="assets/img/story3.jpg" alt="story3" class="stories-item-img">
+                        <div class="stories-item-img story3"></div>
                         <div class="stories-item-text">
                             <h3 class="stories-item-text-header">I left my heart in the Mountains!</h3>
                             <p class="stories-item-text-p">Lorem ipsum dolor sit amet, consectetur 
@@ -137,7 +160,7 @@
                         </div>
                     </div>
                     <div class="stories-item">
-                        <img src="assets/img/story4.jpg" alt="story4" class="stories-item-img">
+                        <div class="stories-item-img story4"></div>
                         <div class="stories-item-text">
                             <h3 class="stories-item-text-header">The Longest journey in my life!</h3>
                             <p class="stories-item-text-p">Lorem ipsum dolor sit amet, consectetur 
@@ -158,7 +181,7 @@
                 </button>
             </section>
         </main>
-        <footer class="footer">
+        <footer class="footer " id="footer">
             <div class="footer-content">
                 <div class="footer-licence">All Rights Reserved © Travel Portal</div>
                 <div class="footer-container">
