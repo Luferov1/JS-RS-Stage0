@@ -94,6 +94,9 @@ body {
     }
 }  
 
+.no-overflow {
+    overflow: hidden;
+}
 
 .container {
     position: relative;
@@ -111,17 +114,30 @@ body {
    margin-right: auto;
    left: 0;
    right: 0;
-   /* top: -660px; */
+   top: -670px;
    text-align: center;
    display: flex;
    flex-direction: column;
    align-items: center;
-   z-index: 999;
+   z-index: 20;
+   transition: transform 2s;
    width: 45.14%;
-   height: 660px;
    background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 16px;     
+}
+
+.popup-open {
+    transform: translateY(735px);
+}
+
+.popup-background {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 19;
 }
 
 .popup-header {
@@ -292,6 +308,7 @@ body {
 }
 
 .popup-redirection {
+    margin-bottom: 23px;
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 700;
@@ -307,6 +324,10 @@ body {
 .popup-redirection span {
     color: #0D606F;
     text-decoration: underline;
+}
+
+.popup-hide {
+    display: none;
 }
 
 .burger-menu {
