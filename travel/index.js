@@ -19,13 +19,25 @@ let popupStatus = 'login';
 const loginButton = document.querySelector('.login-button');
 const popup = document.querySelector('.popup');
 const popupBackground = document.querySelector('.popup-background');
+const submitPopup = document.querySelector('.form-button');
+const accountButton = document.querySelector('.account');
 
 const openBurger = () => {
     menu.classList.toggle('burger-menu-open');
+    popupBackground.style.display = 'block';
+    document.body.classList.toggle('no-overflow');
 }
 
-const closeBurger = () => {
-    menu.classList.toggle('burger-menu-open');
+const closeBurger = (event) => {
+    if (event.target === accountButton) {
+        menu.classList.toggle('burger-menu-open');
+        document.body.classList.toggle('no-overflow');
+    }
+    else {
+        menu.classList.toggle('burger-menu-open');
+        popupBackground.style.display = 'none';
+        document.body.classList.toggle('no-overflow');
+    }
 } 
 
 const changePopup = () => {
@@ -48,15 +60,18 @@ const changePopup = () => {
         popupStatus = 'login';
         return 
     }
+
 }
 const openPopup = () => {
     popup.classList.add('popup-open');
     document.body.classList.toggle('no-overflow');
     popupBackground.style.display = 'block';
+    document.querySelector('#login').value = '';
+    document.querySelector('#password').value = '';    
 }
 
 const closePopUp = (event) => {
-    if (event.target === popupBackground) {
+    if (event.target === popupBackground || event.target === submitPopup) {
         popup.classList.remove('popup-open');
         document.body.classList.toggle('no-overflow');
         popupBackground.style.display = 'none';
@@ -72,6 +87,12 @@ for (let link of links) {
 redirect.addEventListener('click', changePopup);
 loginButton.addEventListener('click', openPopup);
 document.addEventListener('click', closePopUp);
+submitPopup.addEventListener('click', () => {
+    const login = document.querySelector('#login').value;
+    const password = document.querySelector('#password').value;
+    alert(`login: ${login}\npassword: ${password}`);
+})
+accountButton.addEventListener('click', openPopup);
 
 
 console.log('1. +48 \n2. +15 \n3. +20\nmark: 75/75');
