@@ -100,7 +100,7 @@ body {
 
 .container {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-width: 1440px;
     margin: 0 auto;
     height: 3735px;
@@ -661,7 +661,6 @@ body {
     width: 15.69%;
     height: 100%;
     border-radius: 16px;
-    transition: 2s;
 }
 
 .japan {
@@ -1203,8 +1202,8 @@ body {
 
     .destinations {
         position: relative;
-        justify-content: flex-start;
-        gap: 10px;
+        justify-content: space-between;
+        gap: 2.56%;
         margin: 0;
         width: 100%;
         height: 289px;
@@ -1219,7 +1218,12 @@ body {
 
     .destinations-slider {
         justify-content: flex-start;
+        margin-left: 190.3%;
+        gap: 1.35%;
+        width: 282.05%;
         height: 210px;
+        /* transform: translateX(-375px); */
+        /* transition: 2s; */
     }
 
     .destinations-slider:first-child {
@@ -1227,10 +1231,8 @@ body {
     }
 
     .destinations-slider-container {
-        margin-left: 3.84%;
-        margin-right: 3.84%;
         flex-shrink: 0;
-        width: 92.3%;
+        width: 32.73%;
         height: 210px;
     }
 
