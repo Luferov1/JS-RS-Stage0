@@ -23,6 +23,12 @@ const submitPopup = document.querySelector('.form-button');
 const accountButton = document.querySelector('.account');
 const slider = document.querySelector('.destinations-slider');
 
+let slideNumber = 0;
+let translate = 0;
+let translateLength = 0;
+const buttonLeft = document.querySelector('.slider-button-left');
+const buttonRight = document.querySelector('.slider-button-right');
+
 const openBurger = () => {
     menu.classList.toggle('burger-menu-open');
     popupBackground.style.display = 'block';
@@ -45,7 +51,7 @@ const changePopup = () => {
     if (popupStatus === 'login') {
         for (let item of popupItems) {
             item.classList.toggle('popup-hide');
-            console.log(item.classList);
+            // console.log(item.classList);
         }
         header.innerHTML = 'Create account';
         redirect.innerHTML = 'Already have an account? <span>Log in</span>';
@@ -96,17 +102,17 @@ submitPopup.addEventListener('click', () => {
 accountButton.addEventListener('click', openPopup);
 
 slider.addEventListener('click', (event) => {
- 
-    const pageWidth = container.offsetWidth;
+    const pageWidth = container.offsetWidth + window.innerWidth - document.documentElement.clientWidth;
 
     if (event.target === document.querySelector('.destinations-slider') ) return;
     const target = event.target.closest('.destinations-slider-container');
     const sliderItems = document.querySelectorAll('.destinations-slider-container');
-    const sliderItemWidth = target.clientWidth;
     const radios = document.querySelector('.destinations-radio').children;
-    let slide = 0;
+    // const sliderItemWidth = target.clientWidth;
     let index = 0;
+
     if (pageWidth > 390) {
+        // slider.style.transform = 'none';
         for (let item of sliderItems) {
             item.id = `${index}`;
             index++;
@@ -122,7 +128,7 @@ slider.addEventListener('click', (event) => {
             slider.prepend(replacedItem);
         }
 
-        console.log(slider.firstElementChild);
+        // console.log(slider.firstElementChild);
         if (slider.firstElementChild.classList.contains('usa')) {
             for (let item of radios) {
                 item.classList.remove('destinations-radio-current-on');
@@ -153,8 +159,76 @@ slider.addEventListener('click', (event) => {
                 radioItem.classList.add('destinations-radio-current-on');
         }
     }
-   
+   })
+
+   buttonRight.addEventListener('click', (event) => {
+    const pageWidth = container.offsetWidth + + window.innerWidth - document.documentElement.clientWidth;
+    const slideWidth = pageWidth * 0.923;
+    const padding = (pageWidth - slideWidth) / 2;
+    const radios = document.querySelector('.slider-label-container').children;
+
+    if (slideNumber === 0) {
+        slideNumber++;
+        translateLength = Math.ceil((slideWidth + padding) * slideNumber) + 1*slideNumber;
+        slider.style.transform = `TranslateX(-${translateLength}px)`
+
+        for (let item of radios) {
+            item.classList.remove('destinations-radio-current-on');
+            item.classList.add('destinations-radio-current-off');
+        }   
+            const radioItem = document.querySelector('.radio22');
+            radioItem.classList.remove('destinations-radio-current-off');
+            radioItem.classList.add('destinations-radio-current-on');
+    }
+    else if (slideNumber === 1) {
+        slideNumber++;
+        translateLength = Math.ceil((slideWidth + padding) * slideNumber) + 1*slideNumber;
+        slider.style.transform = `TranslateX(-${translateLength}px)`
+
+        for (let item of radios) {
+            item.classList.remove('destinations-radio-current-on');
+            item.classList.add('destinations-radio-current-off');
+        }   
+            const radioItem = document.querySelector('.radio32');
+            radioItem.classList.remove('destinations-radio-current-off');
+            radioItem.classList.add('destinations-radio-current-on');
+    }
+    else return;
 })
+
+    buttonLeft.addEventListener('click', (event) => {
+        const pageWidth = container.offsetWidth + + window.innerWidth - document.documentElement.clientWidth;
+        const slideWidth = pageWidth * 0.923;
+        const padding = (pageWidth - slideWidth) / 2;
+        const radios = document.querySelector('.slider-label-container').children;
+        if (slideNumber === 2) {
+            slideNumber--;
+            translateLength = Math.ceil((slideWidth + padding) * slideNumber) + 1*slideNumber;
+            slider.style.transform = `TranslateX(-${translateLength}px)`
+
+            for (let item of radios) {
+                item.classList.remove('destinations-radio-current-on');
+                item.classList.add('destinations-radio-current-off');
+            }   
+                const radioItem = document.querySelector('.radio22');
+                radioItem.classList.remove('destinations-radio-current-off');
+                radioItem.classList.add('destinations-radio-current-on');
+        }
+        else if (slideNumber === 1) {
+            slideNumber--;
+            translateLength = Math.ceil((slideWidth + padding) * slideNumber) + 1*slideNumber;
+            slider.style.transform = `TranslateX(-${translateLength}px)`
+
+            for (let item of radios) {
+                item.classList.remove('destinations-radio-current-on');
+                item.classList.add('destinations-radio-current-off');
+            }   
+                const radioItem = document.querySelector('.radio12');
+                radioItem.classList.remove('destinations-radio-current-off');
+                radioItem.classList.add('destinations-radio-current-on');
+        }
+        else return;
+    })
 
 
 

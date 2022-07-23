@@ -100,7 +100,7 @@ body {
 
 .container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     max-width: 1440px;
     margin: 0 auto;
     height: 3735px;
@@ -703,13 +703,13 @@ body {
 .destinations-radio-current-on {
     width: 25%;
     height: 100%;
-    background: url(assets/svg/EllipseOn.svg);
+    background: url(assets/svg/EllipseOn.svg) center / 100% 100% no-repeat;
 }
 
 .destinations-radio-current-off {
     width: 25%;
     height: 100%;
-    background: url(assets/svg/EllipseOff.svg);
+    background: url(assets/svg/EllipseOff.svg) center / 100% 100% no-repeat;
 }
 
 .destinations-button {
@@ -1222,8 +1222,7 @@ body {
         gap: 1.35%;
         width: 282.05%;
         height: 210px;
-        /* transform: translateX(-375px); */
-        /* transition: 2s; */
+        transition: 2s;
     }
 
     .destinations-slider:first-child {
@@ -1291,6 +1290,13 @@ body {
         display: flex;
         justify-content: space-between;
         width: 36px;
+        height: 8px;
+        gap: 6px;
+        flex-shrink: 0;
+    }
+
+    .destinations-radio-current-on, .destinations-radio-current-off {
+        width: 8px;
         height: 8px;
     }
 
