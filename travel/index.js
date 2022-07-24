@@ -82,6 +82,7 @@ const closePopUp = (event) => {
         popup.classList.remove('popup-open');
         document.body.classList.toggle('no-overflow');
         popupBackground.style.display = 'none';
+        menu.classList.remove('burger-menu-open');
     }
 }
 
@@ -112,7 +113,7 @@ slider.addEventListener('click', (event) => {
     let index = 0;
 
     if (pageWidth > 390) {
-        // slider.style.transform = 'none';
+        slider.style.transform = 'none';
         for (let item of sliderItems) {
             item.id = `${index}`;
             index++;
@@ -179,6 +180,10 @@ slider.addEventListener('click', (event) => {
             const radioItem = document.querySelector('.radio22');
             radioItem.classList.remove('destinations-radio-current-off');
             radioItem.classList.add('destinations-radio-current-on');
+
+            buttonLeft.classList.remove('slider-button-image-off');
+            buttonLeft.classList.add('slider-button-image-on');
+            buttonLeft.classList.add('slider-button-rotate');
     }
     else if (slideNumber === 1) {
         slideNumber++;
@@ -192,6 +197,10 @@ slider.addEventListener('click', (event) => {
             const radioItem = document.querySelector('.radio32');
             radioItem.classList.remove('destinations-radio-current-off');
             radioItem.classList.add('destinations-radio-current-on');
+
+            buttonRight.classList.remove('slider-button-image-on');
+            buttonRight.classList.add('slider-button-image-off');
+            buttonRight.classList.add('slider-button-rotate');
     }
     else return;
 })
@@ -213,6 +222,10 @@ slider.addEventListener('click', (event) => {
                 const radioItem = document.querySelector('.radio22');
                 radioItem.classList.remove('destinations-radio-current-off');
                 radioItem.classList.add('destinations-radio-current-on');
+
+                buttonRight.classList.remove('slider-button-image-off');
+                buttonRight.classList.add('slider-button-image-on');
+                buttonRight.classList.remove('slider-button-rotate');
         }
         else if (slideNumber === 1) {
             slideNumber--;
@@ -226,6 +239,10 @@ slider.addEventListener('click', (event) => {
                 const radioItem = document.querySelector('.radio12');
                 radioItem.classList.remove('destinations-radio-current-off');
                 radioItem.classList.add('destinations-radio-current-on');
+
+                buttonLeft.classList.remove('slider-button-image-on');
+                buttonLeft.classList.add('slider-button-image-off');
+                buttonLeft.classList.remove('slider-button-rotate');
         }
         else return;
     })

@@ -997,6 +997,31 @@ body {
         font-size: 14px; /*-2*/
         line-height: 18px;
     }
+
+    .popup-header {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .popup-fb-text, .popup-gl-text, .firstline-text {
+        font-size: 12px;
+    }
+
+    .form-input, .form-button {
+        font-size: 18px;
+    }
+
+    .form-label, .popup-forgot-psw, .popup-redirection {
+        font-size: 14px;
+    }
+
+    /* .popup-form {
+        height: 180px;
+    } */
+    
+    .popup-fb, .popup-gl, .form-input, .form-button {
+        height: 38px;
+    }
 }
 
 @media screen and (max-width: 660px) {
@@ -1263,8 +1288,6 @@ body {
     left: 20px;
     width: 30px;
     height: 30px;
-    background: 
-    url(assets/svg/sliderArrow.svg) center no-repeat;
     border: none;
     cursor: pointer;
     }
@@ -1277,10 +1300,22 @@ body {
         right: 20px;
         width: 30px;
         height: 30px;
-        background: 
-        url(assets/svg/sliderArrowActive.svg) center no-repeat;
         border: none;
         cursor: pointer;
+    }
+
+    .slider-button-image-off {
+        background: 
+        url(assets/svg/sliderArrow.svg) center no-repeat;     
+    }
+
+    .slider-button-image-on {
+        background: 
+        url(assets/svg/sliderArrowActive.svg) center no-repeat;
+    }
+
+    .slider-button-rotate {
+        transform: rotate(180deg);
     }
 
     .slider-label-container {
