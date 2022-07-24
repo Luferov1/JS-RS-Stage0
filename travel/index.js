@@ -1,5 +1,3 @@
-console.log('1. +10 \n2. +20 \n3. +48\n4. +12 \n5. +20 \nmark: 100/100');
-
 const container = document.getElementById('container');
 const openButton = document.getElementById('open');
 const menu = document.getElementById('burger-menu');
@@ -51,7 +49,6 @@ const changePopup = () => {
     if (popupStatus === 'login') {
         for (let item of popupItems) {
             item.classList.toggle('popup-hide');
-            // console.log(item.classList);
         }
         header.innerHTML = 'Create account';
         redirect.innerHTML = 'Already have an account? <span>Log in</span>';
@@ -129,7 +126,6 @@ slider.addEventListener('click', (event) => {
             slider.prepend(replacedItem);
         }
 
-        // console.log(slider.firstElementChild);
         if (slider.firstElementChild.classList.contains('usa')) {
             for (let item of radios) {
                 item.classList.remove('destinations-radio-current-on');
@@ -247,27 +243,6 @@ slider.addEventListener('click', (event) => {
         else return;
     })
 
-
-
-
-
-   // console.log(event.target.getBoundingClientRect().height === 800);
-
-
-    // const sliderWidth = target.closest('.destinations-slider').clientWidth;
-    // const padding = (sliderWidth - sliderItemWidth * 5 ) / 4;
-    // let item = target.getBoundingClientRect();
-    // const itemCoords = {
-    //     top: item.top + window.pageYOffset,
-    //     right: item.right + window.pageXOffset,
-    //     bottom: item.bottom + window.pageYOffset,
-    //     left: item.left + window.pageXOffset
-    // };
-    
-    // Math.max(
-    //     document.body.scrollWidth, document.documentElement.scrollWidth,
-    //     document.body.offsetWidth, document.documentElement.offsetWidth,
-    //     document.body.clientWidth, document.documentElement.clientWidth
-    //   ) ;
-        // const partOfItemOnPage = (pageWidth - padding * 2 - sliderItemWidth) / 2;
+console.log('1. +10 \n2. +20 \n3. +48\n4. +12 \n5. +20 \nmark: 100/100');
 console.log('1. +48 \n2. +15 \n3. +20\nmark: 75/75');
+console.log('1. +45 \n2. +50 \n3. +25\nmark: 100/100');
