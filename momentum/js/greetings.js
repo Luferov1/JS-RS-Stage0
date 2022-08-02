@@ -1,11 +1,13 @@
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
 
+export let greetingText = '';
+
 
 export const showGreeting = () => {
     const date = new Date();
     const hours = date.getHours();
-    const greetingText = getTimeOfTheDay(hours);
+    greetingText = getTimeOfTheDay(hours);
     greeting.textContent = `Good ${greetingText}`
 }
 
