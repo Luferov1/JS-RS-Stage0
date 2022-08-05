@@ -112,7 +112,7 @@ const volumeOff = () => {
 }
 
 const setVolume = (event) => {
-    // const target = event.target;
+    if (event.target.classList.contains('volume-toddler')) return;
     containerWidth = volumeProgressBar.offsetWidth;
     const clickWidth = event.offsetX;
     volume = clickWidth / containerWidth;
