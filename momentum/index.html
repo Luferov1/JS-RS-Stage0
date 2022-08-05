@@ -11,10 +11,22 @@
 <body>
   <header class="header">
     <div class="player">
+      <div class="soundtrack-info"></div>
+      <div class="progress-bar-container"><span class="progress-bar"></span></div>
       <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+        <div class="controls-container">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="duration"><span class="duration-now">00:00</span> / <span class="full-duration">00:00</span></div>
+        <div class="volume-container">
+          <button class="volume-on player-icon"></button>
+          <div class="volume-progress-bar-container">
+            <span class="volume-progress-bar"></span>
+            <div class="volume-toddler"></div>
+          </div>
+        </div>
       </div>
       <ul class="play-list"></ul>
     </div>
