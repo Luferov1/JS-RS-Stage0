@@ -135,12 +135,29 @@ body {
 }
 
 .progress-bar-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 400px;
   height: 10px;
   border: 1px solid white;
   cursor: pointer;
 }
 
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: gray;
+}
+
+.progress-bar-toddler {
+  position: absolute;
+  background-color: white;
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+}
 .soundtrack-info {
   height: 20px;
 }
