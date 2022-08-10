@@ -10,6 +10,7 @@
 }
 
 body {
+  position: relative;
   min-width: 480px;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
@@ -349,6 +350,35 @@ body {
   opacity: .6;
 }
 
+.additional {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0 5px;
+  border: 1px solid black;
+}
+
+.settings-container {
+  display: flex;
+  gap: 2.5%;
+  cursor: pointer;
+  padding-top: 10px;
+  width: 70px;
+}
+
+.settings-text {
+  display: block;
+}
+
+.settings-img {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: url("../assets/svg/options.svg");
+  background-color: #fff;
+  border-radius: 5px;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -373,6 +403,60 @@ body {
   min-height: 20px;
 }
 
+.settings-popup {
+  position: absolute;
+  top: 50px;
+  left: 0; 
+  right: 0; 
+  display: flex;
+  flex-direction: column;
+  margin-left: auto; 
+  margin-right: auto;
+  padding-top: 10px; 
+  width: 40%;
+  height: 80%;
+  border-radius: 50px;
+  background-color: gray;
+}
+
+.settings-header {
+  margin-bottom: 5%;
+}
+
+.language-container, .API-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 5%;
+}
+
+.language-input-container, .API-input-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.en-container, .ru-container, .git-container, .unsplash-container, .flickr-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+}
+
+.active {
+  width: 20px;
+  height: 20px;
+  background-size: 15px 15px;
+  background-image: url("../assets/svg/mark.svg");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @media (max-width: 768px) {
   .time {
     min-height: 80px;
@@ -391,5 +475,9 @@ body {
   .name {
     font-size: 32px;
     padding: 5px;
+  }
+
+  .options-text {
+    display: none;
   }
 }

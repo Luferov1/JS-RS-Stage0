@@ -1,9 +1,9 @@
 import { greetingText } from "./greetings.js";
 
-let randomNumFlickr;
+// let randomNumFlickr;
 
-const getRundomNum = () => {
-    randomNumFlickr = Math.floor(Math.random() * (98 - 1 + 1)) + 1;
+const getRundomNumFlickr = (max) => {
+    return Math.floor(Math.random() * (max + 1));
 }
 
 
@@ -12,15 +12,17 @@ const getLinkToImageUnsplash = async () => {
     const res = await fetch(url);
     const data = await res.json();
     return data.urls.regular;
+    // console.log(data.urls.regular)
 }
 
 const getLinkToImageFlickr = async () => {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a977c9e1f7f873f5210ba5da696f9db0&tags=${greetingText}&extras=url_l&format=json&nojsoncallback=1`;
     const res = await fetch(url);
     const data = await res.json();
-    return data.photos.photo[randomNumFlickr].url_l;
+    const max = data.photos.photo.length - 1;
+    return data.photos.photo[getRundomNumFlickr(max)].url_l;
 }
 
-getRundomNum();
+
 // getLinkToImageUnsplash();
-// getLinkToImageFlickr();
+getLinkToImageFlickr();

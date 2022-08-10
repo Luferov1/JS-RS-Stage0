@@ -33,6 +33,13 @@
       </div>
       <ul class="play-list"></ul>
     </div>
+    <div class="additional">
+      <div class="settings-container">
+        <div class="settings-img"></div>
+        <div class="settings-text player-icon">settings</div>
+      </div>
+      <div class="to-do-container"></div>
+    </div>
     <div class="weather">
       <input type="text" class="city" />
       <i class="weather-icon owf"></i>
@@ -64,6 +71,44 @@
       <div class="author"></div>
     </div>
   </footer>
+  <div class="settings-popup">
+    <h2 class="settings-header">Settings</h2>
+    <div class="language-container">
+      <h3 class="language-header">Choose language</h3>
+      <div class="language-input-container">
+        <div class="en-container">
+          <div class="checkbox active"></div>
+          <div class="text">English</div>
+        </div>
+        <div class="ru-container">
+          <div class="checkbox"></div>
+          <div class="text">Russian</div>
+        </div>
+      </div>
+    </div>
+    <div class="API-container">
+      <h3 class="API-header">Choose image source</h3>
+      <div class="API-input-container">
+        <div class="git-container">
+          <div class="checkbox active"></div>
+          <div class="text">Git</div>
+        </div>
+        <div class="unsplash-container">
+          <div class="checkbox"></div>
+          <div class="text">Unplash</div>
+        </div>
+        <div class="flickr-container">
+          <div class="checkbox"></div>
+          <div class="text">Flickr</div>
+        </div>
+      </div>
+    </div>
+    <div class="hider-container">
+      <h3 class="hider-header">Choose what you want to hide</h3>
+      <div class="hider-input-container"></div>
+    </div>
+    <button class="submit-button">Submit</button>
+  </div>
   <script type="module" src="js/dataAndTime.js"></script>
   <script type="module" src="js/greetings.js"></script>
   <script type="module" src="js/slider.js"></script>
@@ -73,5 +118,6 @@
   <script type="module" src="js/playList.js"></script>
   <script type="module" src="js/translation.js"></script>
   <script type="module" src="js/backgroundAPI.js"></script>
+  <script type="module" src="js/options.js"></script>
 </body>
 </html>
