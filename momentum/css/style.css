@@ -355,15 +355,15 @@ body {
   flex-direction: column;
   width: 400px;
   padding: 0 5px;
-  border: 1px solid black;
 }
 
 .settings-container {
   display: flex;
-  gap: 2.5%;
+  gap: 5px;
   cursor: pointer;
+  width: max-content;
   padding-top: 10px;
-  width: 70px;
+  /* width: 70px; */
 }
 
 .settings-text {
@@ -405,9 +405,10 @@ body {
 
 .settings-popup {
   position: absolute;
-  top: 50px;
+  top: -80%;
   left: 0; 
-  right: 0; 
+  right: 0;
+  z-index: 20; 
   display: flex;
   flex-direction: column;
   margin-left: auto; 
@@ -417,17 +418,19 @@ body {
   height: 80%;
   border-radius: 50px;
   background-color: gray;
+  transition: 2s;
 }
 
 .settings-header {
   margin-bottom: 5%;
 }
 
-.language-container, .API-container {
+.language-container, .API-container, .hider-container  {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-bottom: 5%;
+  /* align-items: center; */
+  gap: 25px;
+  margin-bottom: 10%;
 }
 
 .language-input-container, .API-input-container {
@@ -435,16 +438,31 @@ body {
   justify-content: space-around;
 }
 
-.en-container, .ru-container, .git-container, .unsplash-container, .flickr-container {
+.hider-input-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0 10%;
+}
+
+.en-container, .ru-container, .git-container, .unsplash-container, .flickr-container, 
+.audio-hider, .weather-hider, .watch-hider, .date-hider, .quotes-hider, .greeting-hider, 
+.todo-hider {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.audio-hider, .weather-hider, .watch-hider, .date-hider, .quotes-hider, .greeting-hider, 
+.todo-hider {
+  flex: 45%;
 }
 
 .checkbox {
   width: 20px;
   height: 20px;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 .active {
@@ -455,6 +473,56 @@ body {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  width: 80px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.submit-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 30px;
+  height: 30px;
+  background-image: url("../assets/svg/close.svg");
+  background-color: #fff;
+  background-position: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.close-button:hover {
+  background-color: red;
+}
+
+.background {
+  display: none;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 4;
+}
+
+.background-active {
+  display: block;
 }
 
 @media (max-width: 768px) {
