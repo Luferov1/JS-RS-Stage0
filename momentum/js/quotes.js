@@ -1,4 +1,5 @@
 import { language } from "./translation.js";
+import { submitButton } from "./options.js";
 
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
@@ -11,7 +12,7 @@ const getRundomNum = () => {
 }
 
 async function getQuote() {
-    if (language === 'en') {
+    if (language.value === 'en') {
         const url = '../assets/json/quotes.json';
         const res = await fetch(url);
         const data = await res.json();
@@ -21,7 +22,7 @@ async function getQuote() {
         author.textContent = data.quotes[randomNum].author;
     }
 
-    if (language === 'ru') {
+    if (language.value === 'ru') {
         const url = '../assets/json/quotesRu.json';
         const res = await fetch(url);
         const data = await res.json();
@@ -32,6 +33,8 @@ async function getQuote() {
     }
 }
 
-getQuote();
+// getQuote();
 
 changeQuoteButton.addEventListener('click', getQuote);
+submitButton.addEventListener('click', getQuote);
+window.addEventListener('load', getQuote);

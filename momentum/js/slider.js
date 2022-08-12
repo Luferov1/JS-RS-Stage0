@@ -28,7 +28,10 @@ const getSlidePrev = () => {
 }
 
 getRundomNum();
-setBg(greetingText, randomNum);
+
 
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
+window.addEventListener('load', () => {
+    setBg(greetingText, randomNum);
+});

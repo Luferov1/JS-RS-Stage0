@@ -1,5 +1,5 @@
 import { language } from "./translation.js";
-
+import { submitButton } from "./options.js";
 
 const greeting = document.querySelector('.greeting');
 const name = document.querySelector('.name');
@@ -43,9 +43,13 @@ const getLocalStorage = () => {
     if(localStorage.getItem('name')) {
         name.value = localStorage.getItem('name');
     }
+    showGreeting(language.value);
 }
 
-showGreeting(language);
+
 
 window.addEventListener('beforeunload', setLocalStorage)
 window.addEventListener('load', getLocalStorage)
+submitButton.addEventListener('click', () => {
+    showGreeting(language.value);
+});

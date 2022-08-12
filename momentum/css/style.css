@@ -418,7 +418,7 @@ body {
   height: 80%;
   border-radius: 50px;
   background-color: gray;
-  transition: 2s;
+  transition: 1.5s;
 }
 
 .settings-header {

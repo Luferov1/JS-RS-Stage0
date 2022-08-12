@@ -1,9 +1,23 @@
-export let language = 'en';
+export let language = {
+value: 'en'
+};
 
-export const translateToEn = () => {
-    language = 'en';
-}
+// export let language;
 
-export const translateToRu = () => {
-    language = 'ru';
-}
+// const setLocalStorage = () => {
+//     localStorage.setItem('language', JSON.stringify(language));
+// }
+
+// const getLocalStorage = () => {
+//     if (localStorage.getItem('language')) {
+//         language = JSON.parse(localStorage.getItem('language'));
+//     }
+//     // } else {
+//     //     language = {
+//     //         value: 'en'
+//     //         };
+//     // }
+// }
+
+// window.addEventListener('beforeunload', setLocalStorage);
+// window.addEventListener('load', getLocalStorage);

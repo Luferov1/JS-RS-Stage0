@@ -1,5 +1,7 @@
 import { showGreeting } from "./greetings.js";
 import { language } from "./translation.js";
+// import { options } from "./options.js";
+
 
 const time = document.querySelector('.time');
 const dateNow = document.querySelector('.date');
@@ -22,7 +24,7 @@ const showDate = () => {
 }
 
 const setLocale = () => {
-    return language === 'en' ? 'en-Gb' : 'ru-Ru';
+    return language.value === 'en' ? 'en-Gb' : 'ru-Ru';
 }
 
 showTime();

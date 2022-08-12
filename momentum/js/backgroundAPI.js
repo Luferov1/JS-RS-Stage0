@@ -25,4 +25,4 @@ const getLinkToImageFlickr = async () => {
 
 
 // getLinkToImageUnsplash();
-getLinkToImageFlickr();
+// getLinkToImageFlickr();
