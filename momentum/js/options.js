@@ -1,4 +1,6 @@
 import { language } from "./translation.js";
+import { greetingText } from "./greetings.js";
+// import { getRundomNum, setBg, randomNum, backgroundType } from "./slider.js";
 
 const popup = document.querySelector('.settings-popup');
 const optionsButton = document.querySelector('.settings-container');
@@ -7,7 +9,7 @@ const closePopupButton = document.querySelector('.close-button');
 const checkboxes = document.querySelectorAll('.checkbox');
 export const submitButton = document.querySelector('.submit-button');
 
-let options;
+export let options;
 // export let options = {
 //     language: 'en',
 //     imageSource: 'git',
@@ -64,10 +66,14 @@ const changeOptions = () => {
     if (checkboxes[11].classList.contains('active')) options.hidden.todo = true;
     
     language.value = options.language;
-    console.log(options);
 
     language.value === 'en' ? translatePopupToEn() : translatePopupToRu();
     closePopup();
+
+    // if (backgroundType.value === 'git') {
+    //     getRundomNum();
+    //     setBg(greetingText);
+    // }
 }
 
 const setLocalStorage = () => {
@@ -154,6 +160,10 @@ const translatePopupToEn = () => {
     document.querySelector('.todo-hider').lastElementChild.innerHTML = 'To-Do list';
     
     submitButton.innerHTML = 'Submit';
+}
+
+const changeBackground = () => {
+
 }
 
 const setOptions = () => {
