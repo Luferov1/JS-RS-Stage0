@@ -1,7 +1,6 @@
 import { greetingText } from "./greetings.js";
 import { keywordsInput } from "./options.js";
 
-// let randomNumFlickr;
 export let maximum;
 
 export const getRundomNumFlickr = (max) => {
@@ -18,7 +17,6 @@ export const getLinkToImageUnsplash = async () => {
         else url = `https://api.unsplash.com/photos/random?query=${keywordsInput.value}&client_id=ohgBj7pJawD3svzL4eTKaxIBJj6tDroEaSQvxSE1vSU`;
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data);
     
         const img = new Image();
         img.src = data.urls.regular;
@@ -60,7 +58,6 @@ export const getLinkToImageFlickr = async () => {
     catch {
         alert(`No ${keywordsInput.value} images found`)
     }
-    // return data.photos.photo[getRundomNumFlickr(max)].url_l;
 }
 
 const setLocalStorage = () => {

@@ -9,8 +9,6 @@ const humidity = document.querySelector('.humidity');
 const city = document.querySelector('.city');
 const weatherError = document.querySelector('.weather-error');
 
-
-// city.value = 'Minsk';
 async function getWeather() {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${language.value}&appid=56b7a76c5cedb1443af49b2e2f0aa2ae&units=metric`;

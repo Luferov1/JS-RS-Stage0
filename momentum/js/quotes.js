@@ -33,8 +33,6 @@ async function getQuote() {
     }
 }
 
-// getQuote();
-
 changeQuoteButton.addEventListener('click', getQuote);
 submitButton.addEventListener('click', getQuote);
 window.addEventListener('load', getQuote);

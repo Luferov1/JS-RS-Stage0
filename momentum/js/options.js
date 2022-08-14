@@ -1,6 +1,5 @@
 import { language } from "./translation.js";
 import { greetingText } from "./greetings.js";
-// import { getRundomNum, setBg, randomNum, backgroundType } from "./slider.js";
 
 const popup = document.querySelector('.settings-popup');
 const optionsButton = document.querySelector('.settings-container');
@@ -21,23 +20,6 @@ const hideArr = [
     document.querySelector('.greeting-container'),
     document.querySelector('.to-do-container')
 ]
-
-// export let tags;
-
-// export let options = {
-//     language: 'en',
-//     imageSource: 'git',
-//     hidden: {
-//         audio: false,
-//         weather: false,
-//         watch: false,
-//         date: false,
-//         quotes: false,
-//         greeting: false,
-//         todo: false
-//     }
-// }
-// let notcomfirmedOptions 
 
 const openPopup = () => {
     popup.style.transform = 'translateY(110%)';
@@ -103,10 +85,6 @@ const changeOptions = () => {
 
     closePopup();
 
-    // if (backgroundType.value === 'git') {
-    //     getRundomNum();
-    //     setBg(greetingText);
-    // }
 }
 
 const setLocalStorage = () => {
@@ -223,6 +201,3 @@ submitButton.addEventListener('click', changeOptions);
 
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', setOptions);
-
-
-// localStorage.clear()

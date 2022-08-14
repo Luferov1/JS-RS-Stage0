@@ -16,9 +16,6 @@ const durationProgressBar = document.querySelector('.progress-bar-container');
 const durationProgress = document.querySelector('.progress-bar');
 const durationToddler = document.querySelector('.progress-bar-toddler');
 
-// volumeProgressBar.style.width = '50%';
-
-
 let isPlaying = false;
 let playNum = 0;
 let hasVolume = true;

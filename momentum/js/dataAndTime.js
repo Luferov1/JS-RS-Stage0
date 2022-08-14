@@ -1,7 +1,5 @@
 import { showGreeting } from "./greetings.js";
 import { language } from "./translation.js";
-// import { options } from "./options.js";
-
 
 const time = document.querySelector('.time');
 const dateNow = document.querySelector('.date');

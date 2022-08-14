@@ -1,6 +1,5 @@
 const addGoalButton = document.querySelector('.goal-adder');
 const toDoContainer = document.querySelector('.to-do-container');
-// const goalBlocks = document.querySelectorAll('.goal-block');
 
 let goalsCounter = 0;
 let goalsArr = [];
@@ -26,7 +25,6 @@ document.addEventListener('click', (event) => {
     for (let i = 0; i < toDoContainer.children.length; i++) {
         if (toDoContainer.children[i].tagName === 'DIV' && toDoContainer.children[i].innerHTML === '') {
             toDoContainer.children[i].remove();
-            console.log(toDoContainer.children);
             i--;
         };
     }
@@ -48,7 +46,6 @@ const getLocalStorage = () => {
         for (let i = 0; i < +localStorage.getItem('goalsCounter'); i++) {
             addGoal();
             const goalBlocks = document.querySelectorAll('.goal-block');
-            console.log(goalBlocks);
             goalsArr = JSON.parse(localStorage.getItem('goalsArr'));
             goalBlocks.forEach( (item, index) => {
                 item.firstElementChild.value = goalsArr[0];
@@ -60,5 +57,3 @@ const getLocalStorage = () => {
 
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', getLocalStorage);
-
-// localStorage.clear();
