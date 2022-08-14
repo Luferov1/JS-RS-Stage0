@@ -201,3 +201,7 @@ submitButton.addEventListener('click', changeOptions);
 
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', setOptions);
+
+console.log(
+    '1) +15\n2) +10\n3) +20\n4) +15\n5) +10\n6) +15\n7) +17\n8) +15\n9) +9\n10) +20\n11) +10\ntotal: 157/150'
+)
