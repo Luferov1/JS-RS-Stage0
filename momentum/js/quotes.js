@@ -13,7 +13,7 @@ const getRundomNum = () => {
 
 async function getQuote() {
     if (language.value === 'en') {
-        const url = '../../assets/json/quotes.json';
+        const url = 'https://rolling-scopes-school.github.io/luferov1-JSFEPRESCHOOL2022Q2/momentum/assets/json/quotes.json';
         const res = await fetch(url);
         const data = await res.json();
         
@@ -23,7 +23,7 @@ async function getQuote() {
     }
 
     if (language.value === 'ru') {
-        const url = '../../assets/json/quotesRu.json';
+        const url = 'https://rolling-scopes-school.github.io/luferov1-JSFEPRESCHOOL2022Q2/momentum/assets/json/quotesRu.json';
         const res = await fetch(url);
         const data = await res.json();
         
