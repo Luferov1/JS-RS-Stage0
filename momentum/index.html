@@ -34,11 +34,14 @@
       <ul class="play-list"></ul>
     </div>
     <div class="additional">
-      <div class="settings-container">
-        <div class="settings-img"></div>
-        <div class="settings-text player-icon">settings</div>
-      </div>
-      <div class="to-do-container"></div>
+      <div class="to-do-container">
+        <h3>To-Do list</h3>
+        <!-- <div class="goal-block">
+          <input type="text" class="goal-input">
+          <button class="input-delete"></button>
+        </div> -->
+        <button class="goal-adder">New To-Do</button>
+    </div>
     </div>
     <div class="weather">
       <input type="text" class="city" />
@@ -69,6 +72,10 @@
     <div>
       <div class="quote"></div>
       <div class="author"></div>
+    </div>
+    <div class="settings-container">
+      <div class="settings-img"></div>
+      <div class="settings-text player-icon">settings</div>
     </div>
   </footer>
   <div class="settings-popup">
@@ -151,5 +158,6 @@
   <script type="module" src="js/translation.js"></script>
   <script type="module" src="js/backgroundAPI.js"></script>
   <script type="module" src="js/options.js"></script>
+  <script src="js/toDoList.js"></script>
 </body>
 </html>

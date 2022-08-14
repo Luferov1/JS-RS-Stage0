@@ -171,7 +171,10 @@ const translatePopupToRu = () => {
     document.querySelector('.quotes-hider').lastElementChild.innerHTML = 'Цитаты';
     document.querySelector('.greeting-hider').lastElementChild.innerHTML = 'Приветствие';
     document.querySelector('.todo-hider').lastElementChild.innerHTML = 'Задачи';
-    submitButton.innerHTML = 'Подтвердить'
+    submitButton.innerHTML = 'Подтвердить';
+
+    document.querySelector('.to-do-container h3').innerHTML = 'Список целей';
+    document.querySelector('.goal-adder').innerHTML = 'Новая цель';
 }
 
 const translatePopupToEn = () => {
@@ -195,6 +198,9 @@ const translatePopupToEn = () => {
     document.querySelector('.todo-hider').lastElementChild.innerHTML = 'To-Do list';
     
     submitButton.innerHTML = 'Submit';
+
+    document.querySelector('.to-do-container h3').innerHTML = 'To-Do list';
+    document.querySelector('.goal-adder').innerHTML = 'New To-Do';
 }
 
 const hideBlock = () => {
