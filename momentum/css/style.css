@@ -33,6 +33,10 @@ body {
   padding: 20px;
 }
 
+.player {
+  transition: 1s;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
@@ -237,6 +241,7 @@ body {
   width: 180px;
   min-height: 180px;  
   text-align: left;
+  transition: 1s;
 }
 
 .weather-error {
@@ -274,6 +279,10 @@ body {
   opacity: .6;
 }
 
+.to-do-container {
+  transition: 1s;
+}
+
 .main {
   position: relative;
   display: flex;
@@ -308,13 +317,15 @@ body {
   margin-bottom: 10px;
   font-family: 'Arial-MT';
   font-size: 100px;
-  letter-spacing: -4px;  
+  letter-spacing: -4px; 
+  transition: 1s; 
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+  transition: 1s;
 }
 
 .greeting-container {
@@ -325,6 +336,7 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 40px;
+  transition: 1s;
 }
 
 .greeting {
@@ -388,6 +400,7 @@ body {
   height: 25vh; /*30vh*/
   min-height: 160px;  
   padding: 20px;
+  transition: 1s;
 }
 
 .change-quote {
@@ -483,6 +496,10 @@ body {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.blockHider {
+  opacity: 0;
 }
 
 .submit-button {

@@ -12,6 +12,16 @@ export const submitButton = document.querySelector('.submit-button');
 
 export let options;
 
+const hideArr = [
+    document.querySelector('.player'), 
+    document.querySelector('.weather'), 
+    document.querySelector('.time'),
+    document.querySelector('.date'),
+    document.querySelector('.footer'),
+    document.querySelector('.greeting-container'),
+    document.querySelector('.to-do-container')
+]
+
 // export let tags;
 
 // export let options = {
@@ -69,18 +79,28 @@ const changeOptions = () => {
     if (checkboxes[3].classList.contains('active')) options.imageSource = 'upl';
     if (checkboxes[4].classList.contains('active')) options.imageSource = 'flc';
     if (checkboxes[5].classList.contains('active')) options.hidden.audio = true;
+    else options.hidden.audio = false;
     if (checkboxes[6].classList.contains('active')) options.hidden.weather = true;
+    else options.hidden.weather = false;
     if (checkboxes[7].classList.contains('active')) options.hidden.watch = true;
+    else options.hidden.watch = false;
     if (checkboxes[8].classList.contains('active')) options.hidden.date = true;
+    else options.hidden.date = false;
     if (checkboxes[9].classList.contains('active')) options.hidden.quotes = true;
+    else options.hidden.quotes = false;
     if (checkboxes[10].classList.contains('active')) options.hidden.greeting = true;
+    else options.hidden.greeting = false;
     if (checkboxes[11].classList.contains('active')) options.hidden.todo = true;
+    else options.hidden.todo = false;
     
     if (options.imageSource !== 'git') keywordsInput.classList.remove('hide');
 
     language.value = options.language;
 
     language.value === 'en' ? translatePopupToEn() : translatePopupToRu();
+
+    hideBlock();
+
     closePopup();
 
     // if (backgroundType.value === 'git') {
@@ -142,6 +162,7 @@ const translatePopupToRu = () => {
 
     document.querySelector('.API-header').innerHTML = 'Выберите источник изображений';
     document.querySelector('.hider-header').innerHTML = 'Выберите что скрыть';
+    document.querySelector('.API-input').placeholder = 'Ключевые слова';
 
     document.querySelector('.audio-hider').lastElementChild.innerHTML = 'Аудио';
     document.querySelector('.weather-hider').lastElementChild.innerHTML = 'Погода';
@@ -163,6 +184,7 @@ const translatePopupToEn = () => {
 
     document.querySelector('.API-header').innerHTML = 'Choose image source';
     document.querySelector('.hider-header').innerHTML = 'Choose what to hide';
+    document.querySelector('.API-input').placeholder = 'Key words';
 
     document.querySelector('.audio-hider').lastElementChild.innerHTML = 'Audio';
     document.querySelector('.weather-hider').lastElementChild.innerHTML = 'Weather';
@@ -175,13 +197,12 @@ const translatePopupToEn = () => {
     submitButton.innerHTML = 'Submit';
 }
 
-// const createInput = () => {
-//     if (options.imageSource !== 'git') {
-//         keywordsInput.classList.remove('hide');
-//     } else {
-//         keywordsInput.classList.add('hide');
-//     }
-// }
+const hideBlock = () => {
+    for (let i = 0; i < hideArr.length; i++) {
+        if (Object.values(options.hidden)[i] === true) hideArr[i].classList.add('blockHider');
+        else hideArr[i].classList.remove('blockHider');
+    }
+}
 
 const setOptions = () => {
     getLocalStorage();
@@ -197,7 +218,5 @@ submitButton.addEventListener('click', changeOptions);
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', setOptions);
 
-
-console.log(keywordsInput.value == false)
 
 // localStorage.clear()

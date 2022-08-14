@@ -41,7 +41,6 @@ export const getLinkToImageFlickr = async () => {
         else url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a977c9e1f7f873f5210ba5da696f9db0&tags=${keywordsInput.value}&extras=url_l&format=json&nojsoncallback=1`;
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data)
         const max = data.photos.photo.length - 1;
         maximum = max;
         if (rundomNumFlickr.value  == null) getRundomNumFlickr(max);
