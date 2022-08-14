@@ -7,9 +7,13 @@ const optionsButton = document.querySelector('.settings-container');
 const popupBackground = document.querySelector('.background');
 const closePopupButton = document.querySelector('.close-button');
 const checkboxes = document.querySelectorAll('.checkbox');
+export const keywordsInput = document.querySelector('.API-input');
 export const submitButton = document.querySelector('.submit-button');
 
 export let options;
+
+// export let tags;
+
 // export let options = {
 //     language: 'en',
 //     imageSource: 'git',
@@ -49,6 +53,13 @@ const addTick = (event) => {
     } else {
         event.target.classList.toggle('active');
     }
+    if (event.target.closest('.API-input-container')) {
+        if (!event.target.closest(".git-container")) {
+            keywordsInput.classList.remove('hide');
+        } else {
+            keywordsInput.classList.add('hide');
+        }
+    }
 }
 
 const changeOptions = () => {
@@ -65,6 +76,8 @@ const changeOptions = () => {
     if (checkboxes[10].classList.contains('active')) options.hidden.greeting = true;
     if (checkboxes[11].classList.contains('active')) options.hidden.todo = true;
     
+    if (options.imageSource !== 'git') keywordsInput.classList.remove('hide');
+
     language.value = options.language;
 
     language.value === 'en' ? translatePopupToEn() : translatePopupToRu();
@@ -162,9 +175,13 @@ const translatePopupToEn = () => {
     submitButton.innerHTML = 'Submit';
 }
 
-const changeBackground = () => {
-
-}
+// const createInput = () => {
+//     if (options.imageSource !== 'git') {
+//         keywordsInput.classList.remove('hide');
+//     } else {
+//         keywordsInput.classList.add('hide');
+//     }
+// }
 
 const setOptions = () => {
     getLocalStorage();
@@ -181,6 +198,6 @@ window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', setOptions);
 
 
-
+console.log(keywordsInput.value == false)
 
 // localStorage.clear()

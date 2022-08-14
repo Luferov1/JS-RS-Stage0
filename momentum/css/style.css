@@ -445,6 +445,16 @@ body {
   padding: 0 10%;
 }
 
+.API-input {
+  display: block;
+  width: 50%;
+  align-self: center;
+}
+
+.hide {
+  display: none;
+}
+
 .en-container, .ru-container, .git-container, .unsplash-container, .flickr-container, 
 .audio-hider, .weather-hider, .watch-hider, .date-hider, .quotes-hider, .greeting-hider, 
 .todo-hider {
