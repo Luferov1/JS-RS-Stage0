@@ -1,9 +1,9 @@
 const addGoalButton = document.querySelector('.goal-adder');
 const toDoContainer = document.querySelector('.to-do-container');
-const goalBlocks = document.querySelectorAll('.goal-block');
+// const goalBlocks = document.querySelectorAll('.goal-block');
 
 let goalsCounter = 0;
-let goalsArr;
+let goalsArr = [];
 
 const addGoal = () => {
     if (goalsCounter === 4) return
@@ -11,9 +11,6 @@ const addGoal = () => {
     const goal = document.createElement('div');
     goal.innerHTML = '<div class="goal-block"><input type="text" class="goal-input"><button class="input-delete"></button></div>';
     addGoalButton.before(goal);
-    goal.addEventListener('click', () => {
-        console.log(1);
-    })
     goalsCounter++;
 }
 
@@ -36,3 +33,32 @@ document.addEventListener('click', (event) => {
     if (goalsCounter === 4) addGoalButton.style.display = 'block';
     goalsCounter--;
 })
+
+const setLocalStorage = () => {
+    const goalBlocks = document.querySelectorAll('.goal-block');
+    goalBlocks.forEach( (item) => {
+        goalsArr.push(item.firstElementChild.value);
+    })
+    localStorage.setItem('goalsArr', JSON.stringify(goalsArr));
+    localStorage.setItem('goalsCounter', String(goalsCounter));
+}
+
+const getLocalStorage = () => {
+    if (localStorage.getItem('goalsCounter')) {
+        for (let i = 0; i < +localStorage.getItem('goalsCounter'); i++) {
+            addGoal();
+            const goalBlocks = document.querySelectorAll('.goal-block');
+            console.log(goalBlocks);
+            goalsArr = JSON.parse(localStorage.getItem('goalsArr'));
+            goalBlocks.forEach( (item, index) => {
+                item.firstElementChild.value = goalsArr[0];
+                goalsArr.shift();
+            })
+        }
+    }
+}
+
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+
+// localStorage.clear();
