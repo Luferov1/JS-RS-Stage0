@@ -19,6 +19,10 @@ let fullCardsDeck = [
 
 let playingDeck = [];
 let drownOutCards = [];
+let amount = [];
+let stageOneDeck = [];
+let stageTwoDeck = [];
+let stageThreeDeck = [];
 
 const ancientsData = [
     {
@@ -153,6 +157,12 @@ const resetAll = () => {
         [...brownCardsData],
         [...greenCardsData]
     ];
+    playingDeck = [];
+    drownOutCards = [];
+    amount = [];
+    stageOneDeck = [];
+    stageTwoDeck = [];
+    stageThreeDeck = [];
 }
 
 const setStageValues = () => {
@@ -232,6 +242,7 @@ const setHard = () => {
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty !== 'easy';
         })
+        console.log(playingDeck)
 }
 
 const setUltraHard = () => {
@@ -268,7 +279,7 @@ const setUltraHard = () => {
 }
 
 const drawCards = () => {
-    const amount = [
+    amount = [
         +stages[0].innerHTML + +stages[3].innerHTML + +stages[6].innerHTML,
         +stages[1].innerHTML + +stages[4].innerHTML + +stages[7].innerHTML,
         +stages[2].innerHTML + +stages[5].innerHTML + +stages[8].innerHTML
@@ -281,14 +292,35 @@ const drawCards = () => {
             numbers.push(getRandomNum(playingDeck[i].length - 1));
             numbers = [...new Set(numbers)];
         }
-        // console.log(numbers);
         const cardsArr = [];
         for (let j = 0; j < numbers.length; j += 1) {
             cardsArr.push(playingDeck[i][numbers[j]]);
         }
         drownOutCards = [...drownOutCards, cardsArr];
     }
-    console.log(drownOutCards)
+}
+
+const prepareStages = () => {
+    for (let i = 0; i < 3; i += 1) {
+        for (let j = 0; j < stages[i].innerHTML; j++) {
+            stageOneDeck.push(drownOutCards[i][j]);
+        }
+    }
+
+    for (let i = 0; i < 3; i += 1) {
+        for (let j = 0; j < stages[i + 3].innerHTML; j++) {
+            stageTwoDeck.push(drownOutCards[i][j + +stages[i].innerHTML]);
+        }
+    }
+
+    for (let i = 0; i < 3; i += 1) {
+        for (let j = 0; j < stages[i + 6].innerHTML; j++) {
+            stageThreeDeck.push(drownOutCards[i][j + +stages[i+3].innerHTML]);
+        }
+    }
+    console.log(stageOneDeck);
+    console.log(stageTwoDeck);
+    console.log(stageThreeDeck);
 }
 
 const shuffleDeck = (event) => {
@@ -313,6 +345,7 @@ const shuffleDeck = (event) => {
     }
 
     drawCards();
+    prepareStages();
     diffContainer.classList.add('hidden');
     gameContainer.classList.remove('hidden');
 }
