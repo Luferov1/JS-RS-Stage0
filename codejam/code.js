@@ -9,6 +9,9 @@ const diffContainer = document.querySelector('.diff-container');
 const gameContainer = document.querySelector('.game-container');
 const chosenAncient = document.querySelector('.chosen-ancient');
 const stages = document.querySelectorAll('.stage-block');
+const activeCard = document.querySelector('.active-card');
+const shirtCard = document.querySelector('.shirt-card');
+const stageHeaders = document.querySelectorAll('.cards-left h2');
 
 let cardsLeft = {};
 let fullCardsDeck = [
@@ -152,17 +155,23 @@ const resetAll = () => {
         chosenAncient.classList.remove('shubNiggurath');
     }, 1000)
 
+    cardsLeft = {};
     fullCardsDeck = [
-        [...blueCardsData],
+        [...greenCardsData],
         [...brownCardsData],
-        [...greenCardsData]
+        [...blueCardsData]
     ];
+    
     playingDeck = [];
     drownOutCards = [];
     amount = [];
     stageOneDeck = [];
     stageTwoDeck = [];
     stageThreeDeck = [];
+
+    activeCard.style.backgroundImage = 'none';
+    shirtCard.classList.remove('shirt-card-ended');
+    shirtCard.innerHTML = '';
 }
 
 const setStageValues = () => {
@@ -237,12 +246,15 @@ const setEasy = () => {
         })
 }
 
+const setNormal = () => {
+    playingDeck = fullCardsDeck;
+}
+
 const setHard = () => {
     for (let i = 0; i < fullCardsDeck.length; i += 1)
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty !== 'easy';
         })
-        console.log(playingDeck)
 }
 
 const setUltraHard = () => {
@@ -318,9 +330,6 @@ const prepareStages = () => {
             stageThreeDeck.push(drownOutCards[i][j + +stages[i+3].innerHTML]);
         }
     }
-    console.log(stageOneDeck);
-    console.log(stageTwoDeck);
-    console.log(stageThreeDeck);
 }
 
 const shuffleDeck = (event) => {
@@ -334,6 +343,10 @@ const shuffleDeck = (event) => {
 
     if (event.target.id === 'easy') {
         setEasy();
+    }
+
+    if (event.target.id === 'normal') {
+        setNormal();
     }
 
     if (event.target.id === 'hard') {
@@ -350,7 +363,68 @@ const shuffleDeck = (event) => {
     gameContainer.classList.remove('hidden');
 }
 
+const playCard = () => {
+    if (+stages[0].innerHTML + +stages[1].innerHTML + +stages[2].innerHTML !== 0) {
+        activeCard.style.backgroundImage = 'none';
+        const number = getRandomNum(stageOneDeck.length - 1);
+        const playingCard = stageOneDeck.splice(number, 1)[0];
+        activeCard.style.backgroundImage = `url(assets/MythicCards/${playingCard.color}/${playingCard.id}.png)`;
+        
+        if (playingCard.color === 'green') {
+            cardsLeft.firstStage.greenCards--;
+        } else if (playingCard.color === 'brown') {
+            cardsLeft.firstStage.brownCards--;
+        } else {
+            cardsLeft.firstStage.blueCards--;
+        }
+        setStageValues();
+    }
+
+    else if (+stages[3].innerHTML + +stages[4].innerHTML + +stages[5].innerHTML !== 0) {
+        stageHeaders[0].classList.add('cards-left-ended');
+        activeCard.style.backgroundImage = 'none';
+        const number = getRandomNum(stageTwoDeck.length - 1);
+        const playingCard = stageTwoDeck.splice(number, 1)[0];
+        activeCard.style.backgroundImage = `url(assets/MythicCards/${playingCard.color}/${playingCard.id}.png)`;
+        
+        if (playingCard.color === 'green') {
+            cardsLeft.secondStage.greenCards--;
+        } else if (playingCard.color === 'brown') {
+            cardsLeft.secondStage.brownCards--;
+        } else {
+            cardsLeft.secondStage.blueCards--;
+        }
+        setStageValues();
+    }
+
+    else if (+stages[6].innerHTML + +stages[7].innerHTML + +stages[8].innerHTML !== 0) {
+        stageHeaders[1].classList.add('cards-left-ended');
+        activeCard.style.backgroundImage = 'none';
+        const number = getRandomNum(stageThreeDeck.length - 1);
+        const playingCard = stageThreeDeck.splice(number, 1)[0];
+        activeCard.style.backgroundImage = `url(assets/MythicCards/${playingCard.color}/${playingCard.id}.png)`;
+        
+        if (playingCard.color === 'green') {
+            cardsLeft.thirdStage.greenCards--;
+        } else if (playingCard.color === 'brown') {
+            cardsLeft.thirdStage.brownCards--;
+        } else {
+            cardsLeft.thirdStage.blueCards--;
+        }
+        setStageValues();
+    }
+    
+    if (+stages[6].innerHTML + +stages[7].innerHTML + +stages[8].innerHTML === 0) {
+        stageHeaders[2].classList.add('cards-left-ended');
+        shirtCard.classList.add('shirt-card-ended');
+        shirtCard.innerHTML = 'Карт не осталось';
+    }
+}
+
 startGameButton.addEventListener('click', startGame);
 resetButton.addEventListener('click', resetAll);
 ancientsContainer.addEventListener('click', chooseAncient);
-diffContainer.addEventListener('click', shuffleDeck)
+diffContainer.addEventListener('click', shuffleDeck);
+shirtCard.addEventListener('click', playCard);
+
+console.log('Иногда после сброса крашился live server, рекомендую обновлять страницу для сброса');
