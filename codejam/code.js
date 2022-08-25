@@ -168,7 +168,6 @@ const startGame = () => {
 //     stageOneDeck = [];
 //     stageTwoDeck = [];
 //     stageThreeDeck = [];
-
 //     activeCard.style.backgroundImage = 'none';
 //     shirtCard.classList.remove('shirt-card-ended');
 //     shirtCard.innerHTML = '';
