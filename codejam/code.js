@@ -4,7 +4,7 @@ import greenCardsData from "./data/mythicCards/green/index.js";
 
 const startGameButton = document.querySelector('.start-button');
 const ancientsContainer = document.querySelector('.choose-container');
-const resetButton = document.querySelector('.reset-button');
+// const resetButton = document.querySelector('.reset-button');
 const diffContainer = document.querySelector('.diff-container');
 const gameContainer = document.querySelector('.game-container');
 const chosenAncient = document.querySelector('.chosen-ancient');
@@ -137,42 +137,42 @@ const getRandomNum = (max) => {
 const startGame = () => {
     startGameButton.classList.add('hidden');
     ancientsContainer.classList.remove('hidden');
-    resetButton.classList.remove('hidden');
+    // resetButton.classList.remove('hidden');
 }
 
-const resetAll = () => {
-    startGameButton.classList.remove('hidden');
-    ancientsContainer.classList.add('hidden');
-    diffContainer.classList.add('hidden');
-    gameContainer.classList.add('hidden');
-    resetButton.classList.add('hidden');
+// const resetAll = () => {
+//     startGameButton.classList.remove('hidden');
+//     ancientsContainer.classList.add('hidden');
+//     diffContainer.classList.add('hidden');
+//     gameContainer.classList.add('hidden');
+//     resetButton.classList.add('hidden');
 
-    cardsLeft = {};
-    setTimeout( () => {
-        chosenAncient.classList.remove('azathoth');
-        chosenAncient.classList.remove('cthulhu');
-        chosenAncient.classList.remove('iogSothoth');
-        chosenAncient.classList.remove('shubNiggurath');
-    }, 1000)
+//     cardsLeft = {};
+//     setTimeout( () => {
+//         chosenAncient.classList.remove('azathoth');
+//         chosenAncient.classList.remove('cthulhu');
+//         chosenAncient.classList.remove('iogSothoth');
+//         chosenAncient.classList.remove('shubNiggurath');
+//     }, 1000)
 
-    cardsLeft = {};
-    fullCardsDeck = [
-        [...greenCardsData],
-        [...brownCardsData],
-        [...blueCardsData]
-    ];
+//     cardsLeft = {};
+//     fullCardsDeck = [
+//         [...greenCardsData],
+//         [...brownCardsData],
+//         [...blueCardsData]
+//     ];
     
-    playingDeck = [];
-    drownOutCards = [];
-    amount = [];
-    stageOneDeck = [];
-    stageTwoDeck = [];
-    stageThreeDeck = [];
+//     playingDeck = [];
+//     drownOutCards = [];
+//     amount = [];
+//     stageOneDeck = [];
+//     stageTwoDeck = [];
+//     stageThreeDeck = [];
 
-    activeCard.style.backgroundImage = 'none';
-    shirtCard.classList.remove('shirt-card-ended');
-    shirtCard.innerHTML = '';
-}
+//     activeCard.style.backgroundImage = 'none';
+//     shirtCard.classList.remove('shirt-card-ended');
+//     shirtCard.innerHTML = '';
+// }
 
 const setStageValues = () => {
     const cardsLeftValues = [...Object.values(cardsLeft.firstStage), ...Object.values(cardsLeft.secondStage), ...Object.values(cardsLeft.thirdStage)]
@@ -422,9 +422,9 @@ const playCard = () => {
 }
 
 startGameButton.addEventListener('click', startGame);
-resetButton.addEventListener('click', resetAll);
+// resetButton.addEventListener('click', resetAll);
 ancientsContainer.addEventListener('click', chooseAncient);
 diffContainer.addEventListener('click', shuffleDeck);
 shirtCard.addEventListener('click', playCard);
 
-console.log('Иногда после сброса крашился live server, рекомендую обновлять страницу для сброса');
+console.log('В первоначальной версии существовала кнопка сброса, однако иногда она почему-то крашила клиент (при повторном замешивании карт). Поэтому для удобства проверящих я ее убрал. Чтобы сделать новыый расклад просто обновите страницу');
