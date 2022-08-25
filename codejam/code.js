@@ -4,7 +4,7 @@ import greenCardsData from "./data/mythicCards/green/index.js";
 
 const startGameButton = document.querySelector('.start-button');
 const ancientsContainer = document.querySelector('.choose-container');
-// const resetButton = document.querySelector('.reset-button');
+const resetButton = document.querySelector('.reset-button');
 const diffContainer = document.querySelector('.diff-container');
 const gameContainer = document.querySelector('.game-container');
 const chosenAncient = document.querySelector('.chosen-ancient');
@@ -137,41 +137,45 @@ const getRandomNum = (max) => {
 const startGame = () => {
     startGameButton.classList.add('hidden');
     ancientsContainer.classList.remove('hidden');
-    // resetButton.classList.remove('hidden');
+    resetButton.classList.remove('hidden');
 }
 
-// const resetAll = () => {
-//     startGameButton.classList.remove('hidden');
-//     ancientsContainer.classList.add('hidden');
-//     diffContainer.classList.add('hidden');
-//     gameContainer.classList.add('hidden');
-//     resetButton.classList.add('hidden');
+const resetAll = () => {
+    startGameButton.classList.remove('hidden');
+    ancientsContainer.classList.add('hidden');
+    diffContainer.classList.add('hidden');
+    gameContainer.classList.add('hidden');
+    resetButton.classList.add('hidden');
 
-//     cardsLeft = {};
-//     setTimeout( () => {
-//         chosenAncient.classList.remove('azathoth');
-//         chosenAncient.classList.remove('cthulhu');
-//         chosenAncient.classList.remove('iogSothoth');
-//         chosenAncient.classList.remove('shubNiggurath');
-//     }, 1000)
+    cardsLeft = {};
+    setTimeout( () => {
+        chosenAncient.classList.remove('azathoth');
+        chosenAncient.classList.remove('cthulhu');
+        chosenAncient.classList.remove('iogSothoth');
+        chosenAncient.classList.remove('shubNiggurath');
+    }, 1000)
 
-//     cardsLeft = {};
-//     fullCardsDeck = [
-//         [...greenCardsData],
-//         [...brownCardsData],
-//         [...blueCardsData]
-//     ];
+    cardsLeft = {};
+    fullCardsDeck = [
+        [...greenCardsData],
+        [...brownCardsData],
+        [...blueCardsData]
+    ];
     
-//     playingDeck = [];
-//     drownOutCards = [];
-//     amount = [];
-//     stageOneDeck = [];
-//     stageTwoDeck = [];
-//     stageThreeDeck = [];
-//     activeCard.style.backgroundImage = 'none';
-//     shirtCard.classList.remove('shirt-card-ended');
-//     shirtCard.innerHTML = '';
-// }
+    playingDeck = [];
+    drownOutCards = [];
+    amount = [];
+    stageOneDeck = [];
+    stageTwoDeck = [];
+    stageThreeDeck = [];
+    activeCard.style.backgroundImage = 'none';
+    shirtCard.classList.remove('shirt-card-ended');
+    shirtCard.innerHTML = '';
+
+    stageHeaders[0].classList.remove('cards-left-ended');
+    stageHeaders[1].classList.remove('cards-left-ended');
+    stageHeaders[2].classList.remove('cards-left-ended');
+}
 
 const setStageValues = () => {
     const cardsLeftValues = [...Object.values(cardsLeft.firstStage), ...Object.values(cardsLeft.secondStage), ...Object.values(cardsLeft.thirdStage)]
@@ -211,6 +215,7 @@ const setUltraEasy = () => {
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty === 'easy';
         })
+
     const greensLeft = +stages[0].innerHTML + +stages[3].innerHTML + +stages[6].innerHTML - playingDeck[0].length;
     const normalGreensArr = fullCardsDeck[0].filter( item => item.difficulty === 'normal');
     let greenNumbers = [];
@@ -221,7 +226,7 @@ const setUltraEasy = () => {
     }
 
     for (let i = 0; i < greensLeft; i += 1) {
-        playingDeck[2].push(normalGreensArr[greenNumbers[i]]);
+        playingDeck[0].push(normalGreensArr[greenNumbers[i]]);
     }
 
     const brownsLeft = +stages[1].innerHTML + +stages[4].innerHTML + +stages[7].innerHTML - playingDeck[1].length;
@@ -239,10 +244,11 @@ const setUltraEasy = () => {
 }
 
 const setEasy = () => {
-    for (let i = 0; i < fullCardsDeck.length; i += 1)
+    for (let i = 0; i < fullCardsDeck.length; i += 1) {
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty !== 'hard';
         })
+    }
 }
 
 const setNormal = () => {
@@ -250,17 +256,19 @@ const setNormal = () => {
 }
 
 const setHard = () => {
-    for (let i = 0; i < fullCardsDeck.length; i += 1)
+    for (let i = 0; i < fullCardsDeck.length; i += 1) {
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty !== 'easy';
         })
+    }
 }
 
 const setUltraHard = () => {
-    for (let i = 0; i < fullCardsDeck.length; i += 1)
+    for (let i = 0; i < fullCardsDeck.length; i += 1) {
         playingDeck[i] = fullCardsDeck[i].filter( (item) => {
             return item.difficulty === 'hard';
         })
+    }
 
     const greensLeft = +stages[0].innerHTML + +stages[3].innerHTML + +stages[6].innerHTML - playingDeck[0].length;
     const normalGreensArr = fullCardsDeck[0].filter( item => item.difficulty === 'normal');
@@ -272,7 +280,7 @@ const setUltraHard = () => {
     }
 
     for (let i = 0; i < greensLeft; i += 1) {
-        playingDeck[2].push(normalGreensArr[greenNumbers[i]]);
+        playingDeck[0].push(normalGreensArr[greenNumbers[i]]);
     }
 
     const brownsLeft = +stages[1].innerHTML + +stages[4].innerHTML + +stages[7].innerHTML - playingDeck[1].length;
@@ -295,12 +303,11 @@ const drawCards = () => {
         +stages[1].innerHTML + +stages[4].innerHTML + +stages[7].innerHTML,
         +stages[2].innerHTML + +stages[5].innerHTML + +stages[8].innerHTML
     ]
-    
     for (let i = 0; i < 3; i += 1) {
         let numbers = [];
 
         while (numbers.length < amount[i]) {
-            numbers.push(getRandomNum(playingDeck[i].length - 1));
+            numbers.push(getRandomNum(amount[i] - 1));
             numbers = [...new Set(numbers)];
         }
         const cardsArr = [];
@@ -421,9 +428,7 @@ const playCard = () => {
 }
 
 startGameButton.addEventListener('click', startGame);
-// resetButton.addEventListener('click', resetAll);
+resetButton.addEventListener('click', resetAll);
 ancientsContainer.addEventListener('click', chooseAncient);
 diffContainer.addEventListener('click', shuffleDeck);
 shirtCard.addEventListener('click', playCard);
-
-console.log('В первоначальной версии существовала кнопка сброса, однако иногда она почему-то крашила клиент (при повторном замешивании карт). Поэтому для удобства проверящих я ее убрал. Чтобы сделать новыый расклад просто обновите страницу');
